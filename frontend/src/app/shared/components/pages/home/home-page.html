@@ -1,65 +1,76 @@
 <div id="home-page-container"
   (wheel)="$wheelEvent.set($event)"
-  [style.overflow]="state().is(StateEntry) ? 'hidden' : 'auto'"
+  [style.overflow]="state().is(StateEntry) || state().is(StateIntro) ? 'auto' : 'auto'"
 >
-  <div class="home-container">
-    <div
-      class="home-container-line"
-      id="home-container-left-line-v"
-    ></div>
-    <div
-      class="home-container-line"
-      id="home-container-left-line-h"
-    ></div>
-    <div class="home-container-content">
+  <div id="home-title-container" class="home-container">
+
+    <!-- Left vertical line -->
+    <div id="home-title-left-line-v-container">
+      <div
+        class="home-title-line"
+        id="home-title-left-line-v"
+      ></div>
+    </div>
+
+    <!-- Left horizontal line -->
+    <div id="home-title-left-line-h-container">
+      <div
+      class="home-title-line"
+        id="home-title-left-line-h"
+      ></div>
+    </div>
+
+    <!-- Content -->
+    <div id="home-title-content">
       <h1>Florian Alzaix</h1>
       <p>Freelance full stack development</p>
     </div>
-    <div
-      class="home-container-line"
-      id="home-container-right-line-v"
-    ></div>
-    <div
-      class="home-container-line"
-      id="home-container-right-line-h"
-    ></div>
+
+    <!-- Right vertical line -->
+    <div id="home-title-right-line-v-container">
+      <div
+        class="home-title-line"
+        id="home-title-right-line-v"
+      ></div>
+    </div>
+
+    <!-- Right horizontal line -->
+    <div id="home-title-right-line-h-container">
+      <div
+        class="home-title-line"
+        id="home-title-right-line-h"
+      ></div>
+    </div>
   </div>
 
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
-  <br />
-  Test
+  <div id="home-content1-container" class="home-container">
+    <div id="home-content1" class="surface">
+      <h2>ABOUT ME</h2>
+      <div>
+        <p>
+          Passionate about development since I was ten, I dedicated most of my
+          time to making projects for myself. I learned Java to create extensions
+          for the games I loved. Then, I learned HTML, CSS, and PHP to build my
+          first websites (a bit childish and unprofessional at the time, of
+          course). As I grew up, we had Python courses in high school,
+          naturally I learned everything about it and made some small projects
+          with it.
+        </p>
+        <p>
+          In preparatory class, I had the opportunity to study advanced algorithms
+          in Python, which allowed me to understand the deeper layers that
+          frameworks are based on. Finally, engineering school was where
+          I first had the opportunity to make a living out of this
+          passion. Now, I enjoy participating in and creating fully
+          functional and creative projects with new technologies such as AI.
+        </p>
+        <p>
+          I have already made a few serious projects from scratch and
+          collaborated with other developers from around the world, to make
+          your visions come true. Feel free to check a few examples of projects
+          below.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
