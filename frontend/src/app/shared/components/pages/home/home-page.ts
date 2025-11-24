@@ -2,6 +2,7 @@ import { Component, effect, inject, ElementRef, signal, OnInit } from '@angular/
 import { combineLatest, map, throttleTime } from 'rxjs';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { getScrollSign, lockScroll, unlockScroll } from '../../../utils/scroll-utils';
+import { GalleriaModule } from 'primeng/galleria';
 
 // Architecture
 
@@ -46,7 +47,7 @@ class StateContent1 extends State {
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [GalleriaModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
@@ -67,6 +68,19 @@ export class HomePage implements OnInit {
   protected readonly SCROLL_SPEED = 1;
 
   protected readonly ENTRY_DURATION = "0s";
+
+  public readonly PROJECTS = [
+    {
+      title: 'Mine Into the Deep (MID)',
+      description: "Reproduced the game of a coding competition from " +
+      "the previous year. The purpose of this project was to provide my " +
+      "team with training matter. The 24H is challenge that lasts 24 hours" +
+      "in which there are two steps: the first being an AI battle on a " +
+      "game (the reason for this project). The second a web design test." +
+      "Our team won silver on web design !",
+      image: '../../../../../../public/images/mid.png',
+    },
+  ];
 
   //
   //   Bindings

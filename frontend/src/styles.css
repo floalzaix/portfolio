@@ -6,12 +6,12 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--p-primary-color) var(--p-background);
+  scrollbar-color: var(--p-surface-color) var(--p-background);
 
   overflow: hidden;
 }
 
-body {
+html, body {
   margin: 0;
   font-family: Roboto,"Helvetica Neue", sans-serif;
   background: var(--p-background);
