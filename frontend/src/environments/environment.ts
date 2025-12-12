@@ -45,7 +45,7 @@ export const environment = {
         "Demo available. Use (id, pwd)=(test, " +
         "test). It's in French and the forgotten " +
         "password button is only for style.",
-      link: "accounts-demo.floalz.fr",
+      link: "https://accounts-demo.floalz.fr",
       image: "images/accounts.png"
     },
     {
@@ -65,7 +65,7 @@ export const environment = {
       note:
         "My first try at more professional " +
         "designs.",
-      link: "img.floalz.fr",
+      link: "https://img.floalz.fr",
       image: "images/watermark.png"
     },
     {
@@ -180,8 +180,8 @@ export const environment = {
         "Uses repository pattern."
       ],
       note:
-        "UI was rapid—focus was on function.",
-      link: "publisher.floalz.fr",
+        "The focus was on rapid and functional features rather than UI.",
+      link: "https://publisher.floalz.fr",
       image: "images/publisher.png"
     },
   ]) as Project[],

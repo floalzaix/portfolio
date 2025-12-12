@@ -42,12 +42,39 @@
       ></div>
     </div>
   </div>
+  
   <div id="home-projects-container">
     @for (project of projects(); track project.title) {
-      <div class="home-project-container">
+      <div
+        class="home-project-container"
+        [class.home-project-container-left]="$index % 2 === 0"
+        [class.home-project-container-right]="$index % 2 !== 0"
+      >
+        @if (project.image) {
+          <img [src]="project.image" [alt]="project.title" />
+        } 
+        @if (project.video) {
+          <video loop autoplay [muted]="true" playsinline alt="Project's video">
+            <source [src]="project.video" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        }
         <h2>{{ project.title }}</h2>
         <p>{{ project.goal }}</p>
+        <ul>
+          @for (tech of project.techs; track tech) {
+            <li>{{ tech }}</li>
+          }
+        </ul>
+        @if (project.link) {
+          <a [href]="project.link" target="_blank">Link</a>
+        }
+        <p>{{ project.note }}</p>
       </div>
     }
+  </div>
+
+  <div id="home-contact-container">
+    <h2>floalzfencing@gmail.com</h2>
   </div>
 </div>

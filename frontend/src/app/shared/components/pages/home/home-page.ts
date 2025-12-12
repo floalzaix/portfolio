@@ -49,6 +49,7 @@ class StateContent1 extends State {
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.html',
+  styleUrl: './home-page.css',
 })
 export class HomePage implements OnInit {
   protected readonly StateEntry = StateEntry;
@@ -107,15 +108,15 @@ export class HomePage implements OnInit {
 
     switch (this.state().constructor.name) {
       case "StateEntry": {
-        lockScroll(this.elementRef, '#home-page-container');
+        // lockScroll(this.elementRef, '#home-page-container');
         break;
       }
       case "StateIntro": {
-        lockScroll(this.elementRef, '#home-page-container');
+        // lockScroll(this.elementRef, '#home-page-container');
         break;
       }
       case "StateContent1": {
-        unlockScroll(this.elementRef, '#home-page-container');
+        // unlockScroll(this.elementRef, '#home-page-container');
         break;
       }
     }
