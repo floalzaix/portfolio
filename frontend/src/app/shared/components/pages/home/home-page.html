@@ -50,26 +50,32 @@
         [class.home-project-container-left]="$index % 2 === 0"
         [class.home-project-container-right]="$index % 2 !== 0"
       >
-        @if (project.image) {
-          <img [src]="project.image" [alt]="project.title" />
-        } 
-        @if (project.video) {
-          <video loop autoplay [muted]="true" playsinline alt="Project's video">
-            <source [src]="project.video" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        }
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.goal }}</p>
-        <ul>
-          @for (tech of project.techs; track tech) {
-            <li>{{ tech }}</li>
+          @if (project.image) {
+            <div class="home-project-media">
+              <img [src]="project.image" [alt]="project.title" />
+            </div>
+          } 
+          @if (project.video) {
+            <div class="home-project-media">
+              <video loop autoplay [muted]="true" playsinline alt="Project's video">
+                <source [src]="project.video" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
           }
-        </ul>
-        @if (project.link) {
-          <a [href]="project.link" target="_blank">Link</a>
-        }
-        <p>{{ project.note }}</p>
+        <div class="home-project-content">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.goal }}</p>
+          <ul>
+            @for (tech of project.techs; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+          @if (project.link) {
+            <a [href]="project.link" target="_blank">Link</a>
+          }
+          <p>{{ project.note }}</p>
+        </div>
       </div>
     }
   </div>

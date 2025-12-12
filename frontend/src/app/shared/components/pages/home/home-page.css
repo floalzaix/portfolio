@@ -1,7 +1,6 @@
 #home-page-container {
   height: 100vh;
   width: 100vw;
-
 }
 
 .home-container {
@@ -199,16 +198,62 @@
 }
 
 .home-project-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+
+  border-image: linear-gradient(
+    90deg,
+    var(--p-background),
+    var(--p-primary-color),
+    var(--p-secondary-color),
+    var(--p-tertiary-color),
+    var(--p-background),
+    var(--p-tertiary-color),
+    var(--p-secondary-color),
+    var(--p-primary-color),
+    var(--p-background)
+  ) 1;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
-.home-project-container img {
-  width: 50vw;
+.home-project-content {
+
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--p-surface-color);
+}
+
+.home-project-media {
+  min-width: 50%;
+  width: 50%;
   height: 100%;
+
+  display: flex;
+
+  background-color: var(--p-surface-color);
+}
+
+.home-project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-project-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-project-container-left {
+  flex-direction: row-reverse;
 }
