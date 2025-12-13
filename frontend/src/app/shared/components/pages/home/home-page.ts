@@ -6,6 +6,7 @@ import { environment } from '../../../../../environments/environment';
 import { Project } from '../../../models/project';
 import { TimelineModule } from 'primeng/timeline';
 import { FieldsetModule } from 'primeng/fieldset';
+import { ButtonModule } from 'primeng/button';
 
 // Architecture
 
@@ -50,7 +51,11 @@ class StateContent1 extends State {
 
 @Component({
   selector: 'app-home-page',
-  imports: [TimelineModule, FieldsetModule],
+  imports: [
+    TimelineModule, 
+    FieldsetModule,
+    ButtonModule,
+  ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })

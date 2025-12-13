@@ -96,7 +96,11 @@
             >
               <p>{{ project.note }}</p>
               @if (project.link) {
-                <a [href]="project.link" target="_blank">Link</a>
+                <div class="home-project-details-right-button">
+                  <a pButton [href]="project.link" target="_blank">
+                    <i class="pi pi-external-link"></i>
+                  </a>
+                </div>
               }
             </p-fieldset>
           </div>

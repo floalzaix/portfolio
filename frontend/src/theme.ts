@@ -49,6 +49,9 @@ export const theme = definePreset(Aura, {
           h2: {
             color: "rgb(58, 58, 58)",
           },
+          p: {
+            color: "rgb(217, 217, 217)",
+          }
         }
       }
     }

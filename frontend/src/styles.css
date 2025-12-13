@@ -1,7 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/cascadia-code');
+@import "primeicons/primeicons.css";
 
 * {
   font-family: 'Cascadia Code', monospace;
+  font-weight: 100;
 }
 
 html {
@@ -40,7 +42,16 @@ h2 {
 }
 
 .p-fieldset {
+  color: var(--p-text-p-color);
   background-color: transparent;
   border-radius: 0;
   border-color: var(--p-surface-border);
+}
+
+.p-fieldset-legend-label {
+  font-weight: 900;
+}
+
+.p-fieldset p {
+  font-size: 0.8rem;
 }
