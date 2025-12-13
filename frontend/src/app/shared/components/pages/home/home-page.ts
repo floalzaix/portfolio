@@ -4,6 +4,8 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { getScrollSign, lockScroll, unlockScroll } from '../../../utils/scroll-utils';
 import { environment } from '../../../../../environments/environment';
 import { Project } from '../../../models/project';
+import { TimelineModule } from 'primeng/timeline';
+import { FieldsetModule } from 'primeng/fieldset';
 
 // Architecture
 
@@ -48,6 +50,7 @@ class StateContent1 extends State {
 
 @Component({
   selector: 'app-home-page',
+  imports: [TimelineModule, FieldsetModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })

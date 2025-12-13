@@ -57,7 +57,14 @@
           } 
           @if (project.video) {
             <div class="home-project-media">
-              <video loop autoplay [muted]="true" playsinline alt="Project's video">
+              <video
+                class="box"
+                loop
+                autoplay
+                [muted]="true"
+                playsinline
+                alt="Project's video"
+              >
                 <source [src]="project.video" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -65,16 +72,34 @@
           }
         <div class="home-project-content">
           <h2>{{ project.title }}</h2>
-          <p>{{ project.goal }}</p>
-          <ul>
-            @for (tech of project.techs; track tech) {
-              <li>{{ tech }}</li>
-            }
-          </ul>
-          @if (project.link) {
-            <a [href]="project.link" target="_blank">Link</a>
-          }
-          <p>{{ project.note }}</p>
+          <p-fieldset legend="Goal">
+            <p>{{ project.goal }}</p>
+          </p-fieldset>
+          <div class="home-project-details">
+            <p-fieldset
+              legend="Technologies"
+              class="home-project-details-left"
+            >
+              <p-timeline
+                [value]="project.techs"
+                [align]="'alternate'"
+              >
+                <ng-template #content let-tech>
+                  {{ tech }}
+                </ng-template>
+              </p-timeline>
+            </p-fieldset>
+            
+            <p-fieldset
+              legend="Note"
+              class="home-project-details-right"
+            >
+              <p>{{ project.note }}</p>
+              @if (project.link) {
+                <a [href]="project.link" target="_blank">Link</a>
+              }
+            </p-fieldset>
+          </div>
         </div>
       </div>
     }

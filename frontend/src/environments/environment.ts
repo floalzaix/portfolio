@@ -3,7 +3,7 @@ import { Project, ProjectSchema } from "../app/shared/models/project";
 export const environment = {
   PROJECTS: ProjectSchema.array().parse([
     {
-      title: "Mine Into the Deep (MID)",
+      title: "MINE INTO THE DEEP (MID)",
       goal:
         "Reproduced the game of a coding " +
         "competition from the previous year. " +
@@ -26,7 +26,7 @@ export const environment = {
       image: "images/mid.png",
     },
     {
-      title: "Account manager",
+      title: "ACCOUNT MANAGER",
       goal:
         "This project was made to ease " +
         "tracking my and my girlfriend's " +
@@ -49,7 +49,7 @@ export const environment = {
       image: "images/accounts.png"
     },
     {
-      title: "Watermarking tool",
+      title: "WATERMARKING TOOL",
       goal:
         "For my mother to watermark some " +
         "pictures for fun. Let me try Angular " +
@@ -69,7 +69,7 @@ export const environment = {
       image: "images/watermark.png"
     },
     {
-      title: "Flappy bird AI",
+      title: "FLAPPY BIRD AI",
       goal:
         "Fun! Recreated the flappy bird game " +
         "with squares. Two versions; the second " +
@@ -89,7 +89,7 @@ export const environment = {
       video: "videos/flappy-bird.mp4"
     },
     {
-      title: "Tetris",
+      title: "TETRIS",
       goal:
         "School project: guided Tetris. Trained " +
         "an AI (like Flappy bird). Q-Learning at " +
@@ -112,7 +112,7 @@ export const environment = {
       video: "videos/tetris.mp4"
     },
     {
-      title: "Speech-to-text (STT)",
+      title: "SPEECH-TO-TEXT (STT)",
       goal:
         "First week of my Cechas internship: " +
         "tasked to use Kyutai's STT model and " +
@@ -132,7 +132,7 @@ export const environment = {
       image: "images/stt.png"
     },
     {
-      title: "LLM Hosting",
+      title: "LLM HOSTING",
       goal:
         "Second Cechas internship project. " +
         "Lets users host any LLM (Large Language " +
@@ -157,7 +157,7 @@ export const environment = {
         "No images/demo—needs huge compute.",
     },
     {
-      title: "Publisher V2",
+      title: "PUBLISHER V2",
       goal:
         "Third project at Cechas. Tool for " +
         "publishing on 70+ Facebook pages weekly. " +

@@ -39,6 +39,7 @@ export const theme = definePreset(Aura, {
         },
         surface: {
           color: "rgb(23, 23, 23)",
+          border: "rgb(38, 38, 38)",
         },
         background: "rgb(18, 18, 18)",
         text: {
@@ -46,7 +47,7 @@ export const theme = definePreset(Aura, {
             color: "rgb(255, 255, 255)",
           },
           h2: {
-            color: "rgb(255, 255, 255)",
+            color: "rgb(58, 58, 58)",
           },
         }
       }
