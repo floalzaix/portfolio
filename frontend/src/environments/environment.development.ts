@@ -1,7 +1,7 @@
 import { Project, ProjectSchema } from "../app/shared/models/project";
 
 export const environment = {
-  PROJECTS: ProjectSchema.array().parse([
+  PROJECTS_EN: ProjectSchema.array().parse([
     {
       title: "MINE INTO THE DEEP (MID)",
       goal:
@@ -183,6 +183,201 @@ export const environment = {
       ],
       note:
         "The focus was on rapid and functional features rather than UI.",
+      link: "https://publisher.floalz.fr",
+      image: "images/publisher.png"
+    },
+  ]) as Project[],
+
+  PROJECTS_FR: ProjectSchema.array().parse([
+    {
+      title: "MINE INTO THE DEEP (MID)",
+      goal:
+        "Reproduction du jeu d'un concours de programmation " +
+        "de l'année précédente. " +
+        "L'objectif était de fournir à mon équipe " +
+        "un support d'entraînement. Les \"24H\" sont un " +
+        "défi qui dure 24 heures :) et qui " +
+        "se déroule en deux étapes : d'abord une bataille d'IA sur " +
+        "un jeu, ensuite un test de web design. " +
+        "Notre équipe a obtenu une médaille d'argent en web design !",
+      techs: [
+        "Backend en C#",
+        "S'appuie sur ASP.NET pour le web design",
+        "Utilisation de Ngrok pour les parties en local",
+        "MVC "
+      ],
+      note:
+        "J'ai conçu le jeu en une semaine tout en " +
+        "étudiant. Donc soyez indulgent : il a été fait pour " +
+        "nous entraîner entre coéquipiers.",
+      image: "images/mid.png",
+    },
+    {
+      title: "ACCOUNT MANAGER",
+      goal:
+        "Ce projet a été réalisé pour faciliter " +
+        "le suivi de mes transactions et de celles de ma petite amie. " +
+        "Comme Excel, il liste " +
+        "les transactions, ajoute des catégories, fournit " +
+        "des détails par catégorie et des " +
+        "récapitulatifs mensuels.",
+      techs: [
+        "Backend en PHP",
+        "Frontend HTML CSS JS",
+        "Architecture monolithique et MVC",
+        "Utilise Blade pour servir le HTML",
+        "Docker pour le déploiement"
+      ],
+      note:
+        "Démo disponible. Utilisez (id, pwd) = (test, " +
+        "test). L'interface est en français et le bouton " +
+        "mot de passe oublié est purement décoratif.",
+      link: "https://accounts-demo.floalz.fr",
+      image: "images/accounts.png"
+    },
+    {
+      title: "OUTIL DE FILIGRANE (WATERMARKING TOOL)",
+      goal:
+        "Pensé pour ma mère afin de mettre des filigranes sur " +
+        "des photos pour le plaisir. Cela m'a donné l'occasion d'essayer Angular " +
+        "et un type de design plus moderne et plus rapide ! ",
+      techs: [
+        "Backend FastAPI (Python)",
+        "Frontend Angular",
+        "Docker pour le déploiement",
+        "MVC pour le backend",
+        "Frontend organisé par fonctionnalités"
+      ],
+      note:
+        "C'était ma première tentative vers des designs un peu plus " +
+        "professionnels.",
+      link: "https://img.floalz.fr",
+      image: "images/watermark.png"
+    },
+    {
+      title: "FLAPPY BIRD IA",
+      goal:
+        "Juste pour le fun ! Recréation du jeu Flappy Bird " +
+        "avec des carrés. Deux versions : la première pour tester et la seconde " +
+        "pour une intégration IA plus simple. J'ai entraîné un " +
+        "modèle de Q-Learning pour y jouer. Après une semaine, " +
+        "le score moyen de l'IA était de 50. Le Q-Learning n'était " +
+        "pas suffisant pour aller plus loin, peut-être qu'avec plus de " +
+        "temps d'entraînement il aurait encore pu progresser.",
+      techs: [
+        "Principalement Python",
+        "Q-Learning pour l'IA",
+        "Tkinter pour la fenêtre",
+        "MVC"
+      ],
+      note:
+        "C'est l'IA qui joue dans la vidéo !",
+      video: "videos/flappy-bird.mp4"
+    },
+    {
+      title: "TETRIS",
+      goal:
+        "Projet scolaire : Tetris guidé. J'ai entraîné " +
+        "une IA (comme pour Flappy Bird). J'ai d'abord essayé le Q-Learning, " +
+        "mais les résultats n'étaient pas fameux. Puis " +
+        "des Q-Networks, Dueling Q-Network, Double " +
+        "Q-Network. Quelques progrès ont été faits, mais l'IA restait un peu faible. " +
+        "En combinant (D2QN), pas de réel gain. Mon " +
+        "manque d'expérience et de puissance de calcul " +
+        "a limité l'IA. En revanche, le Tetris correspondait " +
+        "bien à l'original et j'ai ajouté quelques petits bonus : multijoueur, " +
+        "pièces fantômes, " +
+        "et contrôles clavier (non inclus dans le projet scolaire, " +
+        "mais présents dans le jeu original).",
+      techs: [
+        "Java pour frontend et backend",
+        "Monolithique et MVC",
+        "DL4J pour l'IA",
+        "Ngrok, WebSocket pour le jeu en local"
+      ],
+      note:
+        "Pour la démonstration cette fois, " +
+        "c'est moi qui ai joué puisque l'IA ne se débrouillait pas très bien.",
+      video: "videos/tetris.mp4"
+    },
+    {
+      title: "SPEECH-TO-TEXT (STT)",
+      goal:
+        "Première semaine de mon stage chez Cechas : " +
+        "j'avais pour mission d'utiliser le modèle STT de Kyutai et " +
+        "de construire une API de transcription. Au bout d'une semaine, le backend " +
+        "était prêt, le frontend pas totalement terminé. Le projet " +
+        "a été abandonné quand Kyutai a sorti son " +
+        "produit Unmute, qui faisait la même chose que mon travail mais " +
+        "en incluant la synthèse vocale (TTS) et prêt pour la production.",
+      techs: [
+        "Backend FastAPI (Python)",
+        "Frontend de démo Tkinter",
+        "Modèle STT de Kyutai",
+        "Transformers de HuggingFace",
+        "Pydantic pour la validation",
+      ],
+      note:
+        "Le temps de réponse moyen avec GPU sur Google Colab était de 4 secondes.",
+      image: "images/stt.png"
+    },
+    {
+      title: "HÉBERGEMENT D'LLM (LLM HOSTING)",
+      goal:
+        "Deuxième projet de stage chez Cechas. " +
+        "Permet à ses utilisateurs d'héberger n'importe quel LLM (Large Language " +
+        "Model) sur un cluster GPU (Kubernetes). " +
+        "L'objectif était de privatiser l'accès aux données et de réduire les coûts " +
+        "liés à l'API OpenAI. Comprend du finetuning LoRA et " +
+        "des fonctionnalités de sortie structurée.",
+      techs: [
+        "FastAPI pour la couche API",
+        "Transformers pour le modèle et le tokenizer",
+        "Datasets pour charger les données d'entraînement",
+        "LangChain pour se connecter à l'API vLLM",
+        "LangGraph pour les sorties structurées",
+        "Redis pour stocker l'état de l'API",
+        "vLLM pour déployer le serveur LLM",
+        "LoRA pour le finetuning",
+        "Docker pour les conteneurs d'API",
+        "Kubernetes pour le déploiement et l'orchestration",
+        "Architecture MVC"
+      ],
+      note:
+        "Ce projet demande une quantité importante de puissance de calcul, " +
+        "c'est pourquoi aucune démonstration publique n'est disponible. " +
+        "De plus, il n'a pas de véritable frontend dédié, car il est surtout côté backend. " +
+        "Néanmoins, il fournissait des résultats précis avec des temps de réponse " +
+        "proportionnels à la longueur de la réponse. Pour des réponses d'environ " +
+        "100 tokens, la latence restait sous la seconde avec 10 utilisateurs " +
+        "simultanés. Avec plus de temps, j'aurais pu implémenter un flux sortant " +
+        "en streaming pour des réponses en temps réel, comme sur les LLM actuels.",
+    },
+    {
+      title: "PUBLISHER V2",
+      goal:
+        "Troisième projet chez Cechas. Outil pour " +
+        "publier chaque semaine sur plus de 70 pages Facebook. " +
+        "Gère les posts/réels organiques, télécharge " +
+        "des données CSV, propose des fonctionnalités de publicité, la " +
+        "duplication d'adsets et un historique d'utilisation. " +
+        "M'a fait toucher à de nombreuses APIs Meta, de la " +
+        "publication aux publicités.",
+      techs: [
+        "Backend FastAPI",
+        "Alembic pour les migrations",
+        "SQLAlchemy comme ORM",
+        "Pydantic pour la validation",
+        "Frontend Angular",
+        "UI Angular Material",
+        "Docker pour le déploiement",
+        "Docker Compose pour l'orchestration",
+        "Nginx pour servir l'application",
+        "Basé sur une architecture Clean + DDD",
+        "Utilise le pattern Repository"
+      ],
+      note:
+        "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI.",
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png"
     },

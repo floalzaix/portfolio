@@ -85,9 +85,13 @@ export class HomePage implements OnInit {
    * Input bindings
    */
 
+  // Signals
+
+  protected readonly $language = signal<"en" | "fr">("en");
+  protected readonly $wheelEvent = signal<WheelEvent | null>(null);
+
   // Observables
 
-  protected readonly $wheelEvent = signal<WheelEvent | null>(null);
   private readonly wheelEvent$ = toObservable(this.$wheelEvent);
 
   // Combined latestl
@@ -282,6 +286,10 @@ export class HomePage implements OnInit {
   }
 
   protected projects(): Project[] {
-    return environment.PROJECTS;
+    return this.$language() === 'en' ? (
+      environment.PROJECTS_EN
+    ) : (
+      environment.PROJECTS_FR
+    );
   }
 }
