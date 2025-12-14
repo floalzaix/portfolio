@@ -100,7 +100,7 @@ export class HomePage implements OnInit {
 
   // Signals
 
-  protected readonly $language = signal<"en" | "fr">("en");
+  protected readonly language = signal<"en" | "fr">("en");
   protected readonly $wheelEvent = signal<WheelEvent | null>(null);
 
   // Observables
@@ -133,15 +133,15 @@ export class HomePage implements OnInit {
 
     switch (this.state().constructor.name) {
       case "StateEntry": {
-        // lockScroll(this.elementRef, '#home-page-container');
+        lockScroll(this.elementRef, '#home-page-container');
         break;
       }
       case "StateIntro": {
-        // lockScroll(this.elementRef, '#home-page-container');
+        lockScroll(this.elementRef, '#home-page-container');
         break;
       }
       case "StateContent1": {
-        // unlockScroll(this.elementRef, '#home-page-container');
+        unlockScroll(this.elementRef, '#home-page-container');
         break;
       }
     }
@@ -304,7 +304,7 @@ export class HomePage implements OnInit {
    * @returns The projects list
    */
   protected projects(): Project[] {
-    return this.$language() === 'en' ? (
+    return this.language() === 'en' ? (
       environment.PROJECTS_EN
     ) : (
       environment.PROJECTS_FR
@@ -331,15 +331,19 @@ export class HomePage implements OnInit {
     .then(() => {
       this.messageService.add({ 
         severity: 'success',
-        summary: 'Copied to clipboard',
+        summary: this.language() === 'en' ? 
+        'Copied to clipboard' : 'Copié dans le presse-papiers',
         detail: text,
       });
     })
     .catch(() => {
       this.messageService.add({
         severity: 'error',
-        summary: 'Error',
-        detail: 'Failed to copy to clipboard',
+        summary: this.language() === 'en' ? 
+        'Error' : 'Erreur',
+        detail: this.language() === 'en' ? 
+        'Failed to copy to clipboard' : 
+        'Erreur lors de la copie dans le presse-papiers',
       });
     });
   }

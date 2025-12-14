@@ -73,7 +73,7 @@
           }
         <div class="home-project-content">
           <h2>{{ project.title }}</h2>
-          <p-fieldset [legend]="$language() === 'en' ? 'Goal' : 'Objectif'">
+          <p-fieldset [legend]="language() === 'en' ? 'Goal' : 'Objectif'">
             <p>{{ project.goal }}</p>
           </p-fieldset>
           <div class="home-project-details">
@@ -136,7 +136,7 @@
       <div class="home-content-line"></div>
       <p-button
         icon="pi pi-language"
-        (onClick)="$language.set($language() === 'en' ? 'fr' : 'en')"
+        (onClick)="language.set(language() === 'en' ? 'fr' : 'en')"
       /> 
       <div class="home-content-line"></div>
     </div>

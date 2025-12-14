@@ -19,6 +19,8 @@ html, body {
   background: var(--p-background);
 
   overflow: hidden;
+
+  transition: all 0.5s ease-in-out;
 }
 
 h1 {
