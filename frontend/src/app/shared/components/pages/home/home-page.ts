@@ -7,6 +7,8 @@ import { Project } from '../../../models/project';
 import { TimelineModule } from 'primeng/timeline';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 // Architecture
 
@@ -55,9 +57,11 @@ class StateContent1 extends State {
     TimelineModule, 
     FieldsetModule,
     ButtonModule,
+    ToastModule
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
+  providers: [MessageService],  
 })
 export class HomePage implements OnInit {
   protected readonly StateEntry = StateEntry;
@@ -70,6 +74,7 @@ export class HomePage implements OnInit {
   private readonly elementRef = inject(ElementRef);
   private readonly document = inject(DOCUMENT);
   private readonly renderer = inject(Renderer2);
+  private readonly messageService = inject(MessageService);
 
   //
   //   Constants
@@ -293,6 +298,11 @@ export class HomePage implements OnInit {
     }
   }
 
+  /**
+   * Gets the projects list according to the language
+   * 
+   * @returns The projects list
+   */
   protected projects(): Project[] {
     return this.$language() === 'en' ? (
       environment.PROJECTS_EN
@@ -314,5 +324,23 @@ export class HomePage implements OnInit {
       this.renderer.addClass(htmlElement, "dark-mode");
       this.isDarkMode = true;
     }
+  }
+  
+  protected copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text)
+    .then(() => {
+      this.messageService.add({ 
+        severity: 'success',
+        summary: 'Copied to clipboard',
+        detail: text,
+      });
+    })
+    .catch(() => {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Failed to copy to clipboard',
+      });
+    });
   }
 }

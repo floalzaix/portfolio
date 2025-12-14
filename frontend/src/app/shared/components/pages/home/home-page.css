@@ -336,18 +336,25 @@
   justify-content: center;
 }
 
-#home-contact-content span {
+#home-contact-content-email {
   width: 60px;
-  height: 80%;
+  height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
   font-size: 0.9rem;
   color: var(--p-primary-color);
 
   transform: rotate(-90deg);
+  transform-origin: center center;
+}
+
+#home-contact-content-email:hover {
+  cursor: pointer;
+  color: color-mix(in srgb, var(--p-accent-color) 70%, var(--p-primary-color));
 }
 
 .home-content-line {

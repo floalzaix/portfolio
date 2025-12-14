@@ -2,6 +2,7 @@
   (wheel)="$wheelEvent.set($event)"
   [style.overflow]="state().is(StateEntry) || state().is(StateIntro) ? 'auto' : 'auto'"
 >
+  <p-toast />
   <div id="home-title-container" class="home-container">
 
     <!-- Left vertical line -->
@@ -114,7 +115,13 @@
   <div id="home-contact-container">
     <div id="home-contact-content">
       <div class="home-content-line"></div>
-      <span>floalzfencing@gmail.com</span>
+      <div
+        id="home-contact-content-email"
+        (click)="copyToClipboard('floalzfencing@gmail.com')"
+      >
+        <i class="pi pi-copy" style="font-size: 0.8rem;"></i>
+        <span>floalzfencing@gmail.com</span>
+      </div>
       <div class="home-content-line"></div>
     </div>
   </div>
