@@ -23,7 +23,7 @@ export const environment = {
         "I designed the game in a week while " +
         "studying. Therefore, be gentle: it was made to " +
         "train with my teammates.",
-      image: "images/mid.png",
+      video: "videos/mid.mp4",
     },
     {
       title: "ACCOUNT MANAGER",
@@ -63,7 +63,8 @@ export const environment = {
       ],
       note:
         "It was my first try at a little bit more professional " +
-        "designs.",
+        "designs. The watermarking is a way to hide an " +
+        "image under another.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png"
     },
@@ -195,7 +196,7 @@ export const environment = {
         "Reproduction du jeu d'un concours de programmation " +
         "de l'année précédente. " +
         "L'objectif était de fournir à mon équipe " +
-        "un support d'entraînement. Les \"24H\" sont un " +
+        "un support d'entraînement. \" Les 24H\" est un " +
         "défi qui dure 24 heures :) et qui " +
         "se déroule en deux étapes : d'abord une bataille d'IA sur " +
         "un jeu, ensuite un test de web design. " +
@@ -207,13 +208,12 @@ export const environment = {
         "MVC "
       ],
       note:
-        "J'ai conçu le jeu en une semaine tout en " +
-        "étudiant. Donc soyez indulgent : il a été fait pour " +
-        "nous entraîner entre coéquipiers.",
-      image: "images/mid.png",
+        "Le jeu a été conçu en une semaine et avait " +
+        "pour but de nous entraîner entre coéquipiers.",
+      video: "videos/mid.mp4",
     },
     {
-      title: "ACCOUNT MANAGER",
+      title: "GESTIONNAIRE DE COMPTE",
       goal:
         "Ce projet a été réalisé pour faciliter " +
         "le suivi de mes transactions et de celles de ma petite amie. " +
@@ -238,7 +238,7 @@ export const environment = {
     {
       title: "WATERMARKING TOOL",
       goal:
-        "Pensé pour ma mère afin de mettre des filigranes sur " +
+        "Pensé pour ma mère afin de mettre des watermarks sur " +
         "des photos pour le plaisir. Cela m'a donné l'occasion d'essayer Angular " +
         "et un type de design plus moderne et plus rapide ! ",
       techs: [
@@ -250,7 +250,8 @@ export const environment = {
       ],
       note:
         "C'était ma première tentative vers des designs un peu plus " +
-        "professionnels.",
+        "professionnels. Le watermarking est une manière de cacher une " +
+        "image sous une autre.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png"
     },
@@ -277,15 +278,15 @@ export const environment = {
     {
       title: "TETRIS",
       goal:
-        "Projet scolaire : Tetris guidé. J'ai entraîné " +
-        "une IA (comme pour Flappy Bird). J'ai d'abord essayé le Q-Learning, " +
+        "Projet scolaire : Tetris guidé. Entrainement d'une " +
+        "IA (comme pour Flappy Bird). J'ai d'abord essayé le Q-Learning, " +
         "mais les résultats n'étaient pas fameux. Puis " +
         "des Q-Networks, Dueling Q-Network, Double " +
         "Q-Network. Quelques progrès ont été faits, mais l'IA restait un peu faible. " +
         "En combinant (D2QN), pas de réel gain. Mon " +
         "manque d'expérience et de puissance de calcul " +
         "a limité l'IA. En revanche, le Tetris correspondait " +
-        "bien à l'original et j'ai ajouté quelques petits bonus : multijoueur, " +
+        "bien à l'original avec quelques petits bonus : multijoueur, " +
         "pièces fantômes, " +
         "et contrôles clavier (non inclus dans le projet scolaire, " +
         "mais présents dans le jeu original).",
@@ -303,9 +304,9 @@ export const environment = {
     {
       title: "SPEECH-TO-TEXT (STT)",
       goal:
-        "Première semaine de mon stage chez Cechas : " +
-        "j'avais pour mission d'utiliser le modèle STT de Kyutai et " +
-        "de construire une API de transcription. Au bout d'une semaine, le backend " +
+        "Première semaine de mon stage chez Cechas." +
+        "Ma mission : utiliser le modèle STT de Kyutai et " +
+        "construire une API de transcription. Au bout d'une semaine, le backend " +
         "était prêt, le frontend pas totalement terminé. Le projet " +
         "a été abandonné quand Kyutai a sorti son " +
         "produit Unmute, qui faisait la même chose que mon travail mais " +

@@ -295,19 +295,19 @@
     var(--p-primary-color) 50%,
     var(--p-secondary-color) 60%,
     var(--p-tertiary-color) 70%,
-    var(--p-background) 70%
+    var(--p-background) 71%
   );
 }
 
 .home-project-media img {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
 .home-project-media video {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 

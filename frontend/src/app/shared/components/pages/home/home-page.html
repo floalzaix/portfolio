@@ -72,7 +72,7 @@
           }
         <div class="home-project-content">
           <h2>{{ project.title }}</h2>
-          <p-fieldset legend="Goal">
+          <p-fieldset [legend]="$language() === 'en' ? 'Goal' : 'Objectif'">
             <p>{{ project.goal }}</p>
           </p-fieldset>
           <div class="home-project-details">
