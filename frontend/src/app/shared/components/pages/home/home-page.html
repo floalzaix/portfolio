@@ -122,7 +122,10 @@
   <div id="home-menu-container">
     <div id="home-menu-content">
       <div class="home-content-line"></div>
-      <p-button icon="pi pi-sun" /> 
+      <p-button
+        icon="pi pi-sun"
+        (onClick)="toggleTheme()"
+      /> 
       <div class="home-content-line"></div>
       <p-button
         icon="pi pi-language"

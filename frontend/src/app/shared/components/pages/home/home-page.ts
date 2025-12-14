@@ -1,4 +1,4 @@
-import { Component, effect, inject, ElementRef, signal, OnInit } from '@angular/core';
+import { Component, effect, inject, ElementRef, signal, OnInit, DOCUMENT, Renderer2 } from '@angular/core';
 import { combineLatest, map, throttleTime } from 'rxjs';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { getScrollSign, lockScroll, unlockScroll } from '../../../utils/scroll-utils';
@@ -68,6 +68,8 @@ export class HomePage implements OnInit {
   //
 
   private readonly elementRef = inject(ElementRef);
+  private readonly document = inject(DOCUMENT);
+  private readonly renderer = inject(Renderer2);
 
   //
   //   Constants
@@ -76,6 +78,12 @@ export class HomePage implements OnInit {
   protected readonly SCROLL_SPEED = 10;
 
   protected readonly ENTRY_DURATION = "4s";
+
+  //
+  //   Properties
+  //
+  
+  protected isDarkMode = true;
 
   //
   //   Bindings
@@ -291,5 +299,20 @@ export class HomePage implements OnInit {
     ) : (
       environment.PROJECTS_FR
     );
+  }
+
+  // Actions methods bindings
+
+  protected toggleTheme() {
+    const htmlElement = this.document.querySelector("html");
+    if (!htmlElement) return;
+
+    if (this.isDarkMode) {
+      this.renderer.removeClass(htmlElement, "dark-mode");
+      this.isDarkMode = false;
+    } else {
+      this.renderer.addClass(htmlElement, "dark-mode");
+      this.isDarkMode = true;
+    }
   }
 }

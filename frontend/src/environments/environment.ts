@@ -236,7 +236,7 @@ export const environment = {
       image: "images/accounts.png"
     },
     {
-      title: "OUTIL DE FILIGRANE (WATERMARKING TOOL)",
+      title: "WATERMARKING TOOL",
       goal:
         "Pensé pour ma mère afin de mettre des filigranes sur " +
         "des photos pour le plaisir. Cela m'a donné l'occasion d'essayer Angular " +
@@ -322,7 +322,7 @@ export const environment = {
       image: "images/stt.png"
     },
     {
-      title: "HÉBERGEMENT D'LLM (LLM HOSTING)",
+      title: "HEBERGEMENT LLM ",
       goal:
         "Deuxième projet de stage chez Cechas. " +
         "Permet à ses utilisateurs d'héberger n'importe quel LLM (Large Language " +

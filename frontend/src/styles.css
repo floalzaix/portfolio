@@ -65,6 +65,10 @@ h2 {
   border-color: var(--p-surface-border);
 }
 
+.p-fieldset-legend {
+  background-color: var(--p-surface-color);
+}
+
 .p-fieldset-legend-label {
   font-weight: 900;
   color: var(--p-text-p-title);
