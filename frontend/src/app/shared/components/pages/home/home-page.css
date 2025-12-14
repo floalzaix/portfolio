@@ -1,6 +1,12 @@
 #home-page-container {
   height: 100vh;
   width: 100vw;
+
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-template-areas: 
+    "title title"
+    "contact projects";
 }
 
 .home-container {
@@ -12,7 +18,6 @@
  *   Home title
  */
 
-
 #home-title-container {
   position: relative;
 
@@ -23,6 +28,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  grid-area: title;
 
   background-color: var(--p-surface-color);
 
@@ -164,38 +170,8 @@
 }
 
 /**
- *   Home content 1
+ *   Home projects container
  */
-
-.home-container p {
-  font-size: 1rem;
-}
-
-.surface {
-  padding: 40px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--p-surface-color);
-  border: 1px solid;
-  border-image: linear-gradient(
-    45deg,
-    var(--p-background),
-    var(--p-tertiary-color),
-    var(--p-secondary-color),
-    var(--p-primary-color),
-    var(--p-background)
-  ) 1;
-}
-
-.surface-h2 {
-  color: var(--p-surface-title);
-
-  font-size: 2.7rem;
-}
 
 .home-project-container {
   width: 100%;
@@ -204,6 +180,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  grid-area: projects;
 }
 
 .home-project-content {
@@ -226,6 +203,8 @@
 .home-project-content > h2 {
   text-align: center;
 }
+
+/* Projects details */
 
 .home-project-details {
   display: flex;
@@ -251,10 +230,14 @@
   word-break: break-word;
 }
 
+/* Projects details left */
+
 .home-project-details-left ::ng-deep .p-fieldset {
   padding-right: 0 !important;
   padding-left: 10px !important;
 }
+
+/* Projects details right */
 
 .home-project-details-right ::ng-deep .p-fieldset {
   height: 100%;
@@ -266,6 +249,7 @@
 
 .home-project-details-right ::ng-deep .p-fieldset-content {
   height: 100%;
+
   display: flex;
   flex-direction: column;
 }
@@ -282,6 +266,8 @@
   text-decoration: none;
   border-radius: 0;
 }
+
+/* Projects media */
 
 .home-project-media {
   min-width: 50%;
@@ -305,6 +291,35 @@
   object-fit: contain;
 }
 
+/* Projects container left */
+
 .home-project-container-left {
   flex-direction: row-reverse;
+}
+
+/**
+ *   Home contact container
+ */
+
+#home-contact-container {
+  grid-area: contact;
+}
+
+#home-contact-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-contact-content div {
+  font-size: 0.9rem;
+  color: var(--p-primary-color);
+
+  display: inline-block;
+
+  transform: rotate(-90deg);
 }

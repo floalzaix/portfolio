@@ -29,16 +29,33 @@ h2 {
   margin: 0;
 
   color: var(--p-text-h2-color);
+  font-weight: 900;
 }
 
-.box {
-  padding: 20px;
+.surface {
+  padding: 40px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--p-surface-border);
+  background-color: var(--p-surface-color);
+  border: 1px solid;
+  border-image: linear-gradient(
+    45deg,
+    var(--p-background),
+    var(--p-tertiary-color),
+    var(--p-secondary-color),
+    var(--p-primary-color),
+    var(--p-background)
+  ) 1;
+}
+
+.surface-h2 {
+  color: var(--p-surface-title);
+
+  font-size: 2.7rem;
 }
 
 .p-fieldset {
@@ -50,6 +67,7 @@ h2 {
 
 .p-fieldset-legend-label {
   font-weight: 900;
+  color: var(--p-text-p-title);
 }
 
 .p-fieldset p {
