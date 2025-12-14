@@ -8,7 +8,7 @@ export const ProjectSchema = z.object({
   title: z.string(),
   goal: z.string(),
   techs: z.array(z.string()),
-  note: z.string(),
+  note: z.string().optional(),
   image: z.string().optional(),
   video: z.string().optional(),
   link: z.string().optional(),

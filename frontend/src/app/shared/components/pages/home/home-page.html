@@ -90,19 +90,21 @@
               </p-timeline>
             </p-fieldset>
             
-            <p-fieldset
-              legend="Note"
-              class="home-project-details-right"
-            >
-              <p>{{ project.note }}</p>
-              @if (project.link) {
-                <div class="home-project-details-right-button">
-                  <a pButton [href]="project.link" target="_blank">
-                    <i class="pi pi-external-link"></i>
-                  </a>
-                </div>
-              }
-            </p-fieldset>
+            @if (project.note) {
+              <p-fieldset
+                legend="Note"
+                class="home-project-details-right"
+              >
+                <p>{{ project.note }}</p>
+                @if (project.link) {
+                  <div class="home-project-details-right-button">
+                    <a pButton [href]="project.link" target="_blank">
+                      <i class="pi pi-external-link"></i>
+                    </a>
+                  </div>
+                }
+              </p-fieldset>
+            }
           </div>
         </div>
       </div>
