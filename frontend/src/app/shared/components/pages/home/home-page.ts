@@ -6,6 +6,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { HomeTitleAnimation } from "../../../directives/animations/home-title-animation";
 
 //
 //   Component
@@ -14,11 +15,12 @@ import { ToastModule } from 'primeng/toast';
 @Component({
   selector: 'app-home-page',
   imports: [
-    TimelineModule, 
+    TimelineModule,
     FieldsetModule,
     ButtonModule,
-    ToastModule
-  ],
+    ToastModule,
+    HomeTitleAnimation
+],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
   providers: [MessageService],  

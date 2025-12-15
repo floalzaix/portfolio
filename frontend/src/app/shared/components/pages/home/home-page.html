@@ -1,6 +1,15 @@
 <div id="home-page-container">
   <p-toast />
-  <div id="home-title-container" class="home-container">
+  <div
+    appHomeTitleAnimation
+    [idLineTopLeft]="'home-title-left-line-v'"
+    [idLineTopRight]="'home-title-left-line-h'"
+    [idLineBottomRight]="'home-title-right-line-v'"
+    [idLineBottomLeft]="'home-title-right-line-h'"
+    [idBox]="'home-title-content'"
+    id="home-title-container"
+    class="home-container"
+  >
 
     <!-- Left vertical line -->
     <div id="home-title-left-line-v-container">
