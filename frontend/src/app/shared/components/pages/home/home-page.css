@@ -176,13 +176,15 @@
 
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   grid-area: projects;
 }
 
 .home-project-content {
   position: relative;
   z-index: 999;
+
   margin: min(30px, 2%);
   padding: 25px;
 

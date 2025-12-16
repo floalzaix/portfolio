@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { HomeTitleAnimation } from "../../../directives/animations/home-title-animation";
+import { VLineAnimation } from "../../../directives/animations/v-line-animation";
 
 //
 //   Component
@@ -19,7 +20,8 @@ import { HomeTitleAnimation } from "../../../directives/animations/home-title-an
     FieldsetModule,
     ButtonModule,
     ToastModule,
-    HomeTitleAnimation
+    HomeTitleAnimation,
+    VLineAnimation
 ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
