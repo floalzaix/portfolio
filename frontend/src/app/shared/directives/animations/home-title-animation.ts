@@ -18,6 +18,7 @@ export class HomeTitleAnimation {
   //   Interfaces
   //
   
+  public readonly idScrollableContainer = input<string>("");
   public readonly idLineTopLeft = input<string>("");
   public readonly idLineTopRight = input<string>("");
   public readonly idLineBottomRight = input<string>("");
@@ -40,7 +41,8 @@ export class HomeTitleAnimation {
   ngAfterViewInit() {
     // Checking if all the required inputs are present if not just
     // returns to avoid errors as the animations are not needed
-    if (!this.idLineTopLeft() ||
+    if (!this.idScrollableContainer() ||
+        !this.idLineTopLeft() ||
         !this.idLineTopRight() ||
         !this.idLineBottomRight() ||
         !this.idLineBottomLeft() ||
@@ -66,7 +68,7 @@ export class HomeTitleAnimation {
   private titleAppearsAnimation(): gsap.core.Timeline | undefined {
     // Getting the scroll container
     const scrollContainer = this.document.querySelector(
-      "#home-page-container"
+      `#${this.idScrollableContainer()}`
     ) as HTMLElement | null;
     if (!scrollContainer) {
       return;
@@ -117,6 +119,8 @@ export class HomeTitleAnimation {
     const step1Opacity = 0;
 
     const step2Duration = 0.5;
+
+    const step3ScrollLength = 0.4;
 
     //
     //   Lines
@@ -196,11 +200,13 @@ export class HomeTitleAnimation {
       scale: 1,
       scrollTrigger: {
         trigger: box.parentElement,
-        scroller: "#home-page-container",
+        scroller: `#${this.idScrollableContainer()}`,
+        start: "top top",
+        end: "bottom " + (100 - step3ScrollLength * 100) + "%",
         pin: box.parentElement,
         anticipatePin: 1,
-        scrub: 0.2,
-      }
+        scrub: true,
+      },
     }, step2Duration);
 
     //
