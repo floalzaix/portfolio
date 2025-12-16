@@ -9,8 +9,6 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--p-surface-color) var(--p-background);
-
-  overflow: hidden;
 }
 
 html, body {

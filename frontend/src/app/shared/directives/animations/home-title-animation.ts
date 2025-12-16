@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject, input } from '@angular/core';
+import { Directive, DOCUMENT, ElementRef, inject, input } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
  * around the box that expands as the box rises.
  * 
  * Each lines must be on one border of the box and be able to expand.
+ * 
+ * When scrolling down the page the lines expand.
  */
 @Directive({
   selector: '[appHomeTitleAnimation]',
@@ -22,7 +24,8 @@ export class HomeTitleAnimation {
   public readonly idLineBottomLeft = input<string>("");
   public readonly idBox = input<string>("");
 
-  private readonly document = inject(ElementRef);
+  private readonly document = inject(DOCUMENT);
+  private readonly elementRef = inject(ElementRef);
 
   //
   //   Properties
@@ -49,68 +52,166 @@ export class HomeTitleAnimation {
     gsap.registerPlugin(ScrollTrigger);
 
     // Registering animations
-    this.animations.push(
-      this.titleAppearsAnimation()
-    )
+    const animation = this.titleAppearsAnimation();
+    if (animation) {
+      animation.play();
+      this.animations.push(animation);
+    }
   }
 
   //
   //   Animations
   //
   
-  private titleAppearsAnimation() {
-    const tl = gsap.timeline({});
+  private titleAppearsAnimation(): gsap.core.Timeline | undefined {
+    // Getting the scroll container
+    const scrollContainer = this.document.querySelector(
+      "#home-page-container"
+    ) as HTMLElement | null;
+    if (!scrollContainer) {
+      return;
+    }
 
-    // Parameters
-    const step1Duration = 5;
-    const scaleInitialValue = 0.1;
+    const tl = gsap.timeline({
+      onComplete: () => {
+        scrollContainer.style.overflowY = "auto";
+      }
+    });
 
     // Getting the box dimensions
-    const box = this.document.nativeElement.querySelector(
+    const box = this.elementRef.nativeElement.querySelector(
       `#${this.idBox()}`
     );
-    console.log(box)
     if (!box) {
       return tl;
     }
     const boxRect = box.getBoundingClientRect();
 
-    console.log(boxRect);
+    // Getting the lines dimensions
+    const lineTopLeft = this.elementRef.nativeElement.querySelector(
+      `#${this.idLineTopLeft()}`
+    );
+    if (!lineTopLeft) {
+      return tl;
+    }
+    const lineTopLeftRect = lineTopLeft.getBoundingClientRect();
+    const lineTopRight = this.elementRef.nativeElement.querySelector(
+      `#${this.idLineTopRight()}`
+    );
+    if (!lineTopRight) {
+      return tl;
+    }
+    const lineTopRightRect = lineTopRight.getBoundingClientRect();
+
+    //
+    //   Parameters
+    //
+    
+    const step1Duration = 0;
+    const step1XScale= (
+      boxRect.width / lineTopRightRect.width
+    );
+    const step1YScale= (
+      boxRect.height / lineTopLeftRect.height
+    );
+    const step1Opacity = 0;
+
+    const step2Duration = 0.5;
+
+    //
+    //   Lines
+    //
 
     // First step 
-    tl.from(`#${this.idLineTopLeft()}`, {
-      x: boxRect.width / 2,
-      y: -boxRect.height / 2,
-      scaleY: scaleInitialValue,
+    tl.fromTo(`#${this.idLineTopLeft()}`, {
+      x: boxRect.width / 2 + 1,
+      y: -boxRect.height / 2 - 1,
+      scaleY: step1YScale,
       transformOrigin: "bottom",
+      opacity: step1Opacity
+    }, {
+      opacity: 1,
       duration: step1Duration
     }, 0);
-    tl.from(`#${this.idLineTopRight()}`, {
-      x: boxRect.width / 2,
-      y: boxRect.height / 2,
-      scaleX: scaleInitialValue,
+    tl.fromTo(`#${this.idLineTopRight()}`, {
+      x: boxRect.width / 2 + 1,
+      y: boxRect.height / 2 + 1,
+      scaleX: step1XScale,
       transformOrigin: "left",
+      opacity: step1Opacity,
+    }, {
+      opacity: 1,
       duration: step1Duration
     }, 0);
-    tl.from(`#${this.idLineBottomRight()}`, {
-      x: -boxRect.width / 2,
-      y: boxRect.height / 2,
-      scaleY: scaleInitialValue,
+    tl.fromTo(`#${this.idLineBottomRight()}`, {
+      x: -boxRect.width / 2 - 1,
+      y: boxRect.height / 2 + 1,
+      scaleY: step1YScale,
       transformOrigin: "top",
+      opacity: step1Opacity,
+    }, {
+      opacity: 1,
       duration: step1Duration
     }, 0);
-    tl.from(`#${this.idLineBottomLeft()}`, {
-      x: -boxRect.width / 2,
-      y: -boxRect.height / 2,
-      scaleX: scaleInitialValue,
+    tl.fromTo(`#${this.idLineBottomLeft()}`, {
+      x: -boxRect.width / 2 - 1,
+      y: -boxRect.height / 2 - 1,
+      scaleX: step1XScale,
       transformOrigin: "right",
+      opacity: step1Opacity,
+    }, {
+      opacity: 1,
       duration: step1Duration
     }, 0);
 
     // Second step
-    tl.from(`#${this.idLineTopLeft()}`, {
-      
-    }, "> ")
+    tl.to(`#${this.idLineTopLeft()}`, {
+      x: 0,
+      y: 0,
+      duration: step2Duration
+    }, step1Duration);
+    tl.to(`#${this.idLineTopRight()}`, {
+      x: 0,
+      y: 0,
+      duration: step2Duration
+    }, step1Duration);
+    tl.to(`#${this.idLineBottomRight()}`, {
+      x: 0,
+      y: 0,
+      duration: step2Duration
+    }, step1Duration);
+    tl.to(`#${this.idLineBottomLeft()}`, {
+      x: 0,
+      y: 0,
+      duration: step2Duration
+    }, step1Duration);
+
+    // Third step
+    tl.to([
+      `#${this.idLineTopLeft()}`,
+      `#${this.idLineTopRight()}`,
+      `#${this.idLineBottomRight()}`,
+      `#${this.idLineBottomLeft()}`
+    ], {
+      scale: 1,
+      scrollTrigger: {
+        trigger: box.parentElement,
+        scroller: "#home-page-container",
+        pin: box.parentElement,
+        anticipatePin: 1,
+        scrub: 0.2,
+      }
+    }, step2Duration);
+
+    //
+    //   Box
+    //
+    
+    // Second step
+    tl.from(`#${this.idBox()}`, {
+      scale: 0,
+      duration: step2Duration
+    }, step1Duration);
 
     return tl;
   }

@@ -8,7 +8,8 @@
     "title title title"
     "contact projects menu";
 
-  overflow: auto;
+  overflow: hidden;
+  padding-right: 8px;
 }
 
 .home-container {
