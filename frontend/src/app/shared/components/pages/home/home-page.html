@@ -57,31 +57,38 @@
         [class.home-project-container-left]="$index % 2 === 0"
         [class.home-project-container-right]="$index % 2 !== 0"
       >
-          @if (project.image) {
-            <div class="home-project-media">
-              <img [src]="project.image" [alt]="project.title" />
-            </div>
-          } 
-          @if (project.video) {
-            <div class="home-project-media">
-              <video
-                class="box"
-                loop
-                autoplay
-                [muted]="true"
-                playsinline
-                alt="Project's video"
-              >
-                <source [src]="project.video" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          }
+
+        <!-- Lines for animation -->
+        <div class="v-line"></div>
+
+        @if (project.image) {
+          <div class="home-project-media">
+            <img [src]="project.image" [alt]="project.title" />
+          </div>
+        } 
+        @if (project.video) {
+          <div class="home-project-media">
+            <video
+              class="box"
+              loop
+              autoplay
+              [muted]="true"
+              playsinline
+              alt="Project's video"
+            >
+              <source [src]="project.video" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        }
+
         <div class="home-project-content">
           <h2>{{ project.title }}</h2>
+
           <p-fieldset [legend]="language() === 'en' ? 'Goal' : 'Objectif'">
             <p>{{ project.goal }}</p>
           </p-fieldset>
+
           <div class="home-project-details">
             <p-fieldset
               legend="Technologies"
