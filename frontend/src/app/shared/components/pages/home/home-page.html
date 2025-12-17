@@ -1,5 +1,14 @@
 <div id="home-page-container">
+
+  <!-- Toast for notifications -->
   <p-toast />
+
+  <!--
+  
+    Home title container
+  
+  -->
+  
   <div
     appHomeTitleAnimation
     [idScrollableContainer]="'home-page-container'"
@@ -70,12 +79,44 @@
         }
 
         @if (project.image) {
-          <div class="home-project-media">
+          <div
+            #container
+            class="home-project-media"
+            (click)="openFullScreen(container)"
+          >
+            <!-- Full screen button to close the full screen -->
+            @if (isFullScreen()) {
+              <p-button
+                icon="pi pi-times"
+                (onClick)="closeFullScreen()"
+                class="full-screen-close-button"
+                variant="text"
+                [raised]="true"
+                severity="danger"
+              />
+            }
+
             <img [src]="project.image" [alt]="project.title" />
           </div>
         } 
         @if (project.video) {
-          <div class="home-project-media">
+          <div
+            #container
+            class="home-project-media"
+            (click)="openFullScreen(container)"
+          >
+            <!-- Full screen button to close the full screen -->
+            @if (isFullScreen()) {
+              <p-button
+                icon="pi pi-times"
+                (onClick)="closeFullScreen()"
+                class="full-screen-close-button"
+                variant="text"
+                [raised]="true"
+                severity="danger"
+              />
+            }
+
             <video
               class="box"
               loop

@@ -67,18 +67,28 @@ export class VLineAnimation implements AfterViewInit {
     }
     const containerRect = container.getBoundingClientRect();
     const parentElementRect = parentElement.getBoundingClientRect();
+    const parentHeight = parentElementRect.height + 60;
 
     const tl = gsap.timeline();
 
     //
     //   Parameters
     //
+
+    const offset = 0.1;
     
     const scrollOffset = (
-      (1 - containerRect.height / (parentElementRect.height + 60)) * 100 / 2
+      (1 - containerRect.height / parentHeight) * 100 / 2
     );
 
-    // console.log(scrollOffset);
+    //
+    //   Offset
+    //
+    
+    tl.to(container, {
+      y: parentHeight * offset,
+      duration: 0,
+    })
 
     //
     //   ScrollTrigger
@@ -88,8 +98,8 @@ export class VLineAnimation implements AfterViewInit {
       scrollTrigger: {
         trigger: container.parentElement,
         scroller: "#" + this.idScrollableContainer(),
-        start: "top " + scrollOffset + "%",
-        end: "bottom " + (100 - scrollOffset) + "%",
+        start: "top " + (scrollOffset - offset * 100 ) + "%",
+        end: "bottom " + (100 - scrollOffset + offset * 100) + "%",
         scrub: true,
         pin: container,
         pinSpacing: false,

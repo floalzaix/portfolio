@@ -1,4 +1,4 @@
-import { Component, inject, ElementRef, signal, DOCUMENT, Renderer2 } from '@angular/core';
+import { Component, inject, signal, DOCUMENT, Renderer2, HostListener } from '@angular/core';
 import { environment } from '../../../../../environments/environment';
 import { Project } from '../../../models/project';
 import { TimelineModule } from 'primeng/timeline';
@@ -40,7 +40,8 @@ export class HomePage {
   //   Properties
   //
   
-  protected isDarkMode = true;
+  protected isDarkMode = signal<boolean>(true);
+  protected isFullScreen = signal<boolean>(false);
 
   //
   //   Bindings
@@ -49,6 +50,15 @@ export class HomePage {
   // Signals
 
   protected readonly language = signal<"en" | "fr">("en");
+
+  //
+  //   Listeners
+  //
+
+  @HostListener('document:fullscreenchange', ['$event'])
+  onFullScreenChange(event: Event) {
+    this.isFullScreen.set(!!document.fullscreenElement);
+  }
 
   //
   //   Other methods
@@ -73,12 +83,12 @@ export class HomePage {
     const htmlElement = this.document.querySelector("html");
     if (!htmlElement) return;
 
-    if (this.isDarkMode) {
+    if (this.isDarkMode()) {
       this.renderer.removeClass(htmlElement, "dark-mode");
-      this.isDarkMode = false;
+      this.isDarkMode.set(false);
     } else {
       this.renderer.addClass(htmlElement, "dark-mode");
-      this.isDarkMode = true;
+      this.isDarkMode.set(true);
     }
   }
   
@@ -102,5 +112,17 @@ export class HomePage {
         'Erreur lors de la copie dans le presse-papiers',
       });
     });
+  }
+
+  protected openFullScreen(e: HTMLElement) {
+    if (e.requestFullscreen) {
+      e.requestFullscreen();
+    }
+  }
+
+  protected closeFullScreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
   }
 }

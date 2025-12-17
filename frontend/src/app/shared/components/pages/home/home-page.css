@@ -297,7 +297,7 @@
 
 /* Projects media */
 
-.home-project-media {
+.home-project-media, .home-project-media:fullscreen:hover {
   min-width: 50%;
   width: 50%;
   height: 100%;
@@ -315,6 +315,22 @@
     var(--p-secondary-color) 60%,
     var(--p-tertiary-color) 70%,
     var(--p-background) 71%
+  );
+  cursor: default;
+}
+
+.home-project-media:hover {
+  cursor: pointer;
+
+  background: radial-gradient(
+    circle at center,
+    var(--p-background) 20%,
+    var(--p-fifth-color) 27%,
+    var(--p-secondary-color) 40%,
+    var(--p-primary-color) 50%,
+    var(--p-secondary-color) 60%,
+    var(--p-tertiary-color) 70%,
+    var(--p-background) 73%
   );
 }
 

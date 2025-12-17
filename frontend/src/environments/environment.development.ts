@@ -187,7 +187,7 @@ export const environment = {
         "Uses repository pattern"
       ],
       note:
-        "The focus was on rapid and functional features rather than UI.",
+        "The focus was on rapid and functional features rather than UI. And this is a demonstration, therefore not all features are available (Meta specific authorizations).",
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
       smallAnimation: "<i class='pi pi-facebook'></i>"
@@ -387,7 +387,7 @@ export const environment = {
         "Utilise le pattern Repository"
       ],
       note:
-        "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI.",
+        "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI. Et ceci est une démonstration, par conséquent les fonctionnalités ne sont pas toutes disponibles (authorizatons Meta propres à l'entreprise).",
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
       smallAnimation: "<i class='pi pi-facebook'></i>"
