@@ -84,3 +84,17 @@ h2 {
   right: 10px;
   z-index: 9999;
 }
+
+.p-dialog {
+  width: 50%;
+}
+
+.p-dialog-title {
+  font-size: 3rem;
+  color: var(--p-primary-color);
+}
+
+.p-dialog-content {
+  white-space: normal;
+  word-wrap: break-word;
+}

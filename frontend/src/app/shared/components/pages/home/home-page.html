@@ -217,4 +217,45 @@
       <div class="home-content-line"></div>
     </div>
   </div>
+
+  <div id="home-footer-container"> 
+    <p-divider>
+      <a pButton (click)="isLegalDialogVisible.set(true)">
+        @if (language() === 'en') {
+          Legal notice
+        } @else if (language() === 'fr') {
+          Mentions légales
+        }
+      </a>
+      <p-dialog
+        [(visible)]="isLegalDialogVisible"
+        [modal]="true"
+        [header]="language() === 'en' ? 'LEGAL NOTICE' : 'MENTIONS LEGALES'"
+      >
+        @if (language() === 'fr') {
+          <h2>Éditeur du site</h2>
+          Nom : Florian Alzaix <br />
+          Adresse : Dijon - France <br />
+          Contact : floalzafencing@gmail.com <br /> <br />
+
+          <h2>Hébergeur</h2> <br />
+          OVHcloud - 2 rue Kellermann, 59100 Roubaix, France - https://www.ovhcloud.com <br /> <br />
+
+          <h2>Propriété intellectuelle</h2> <br />
+          Sauf mention contraire, l'ensemble des contenus (textes, images, projets, code) présentés sur ce site est la propriété de Florian Alzaix et ne peut être réutilisé sans autorisation préalable.
+        } @else if (language() === 'en') {
+          <h2>Site owner</h2> <br />
+          Name: Florian Alzaix <br />
+          Address: Dijon - France <br />
+          Contact: floalzfencing@gmail.com <br /> <br />
+
+          <h2>Hosting provider</h2> <br />
+          OVHcloud - 2 rue Kellermann, 59100 Roubaix, France - https://www.ovhcloud.com <br /> <br />
+
+          <h2>Intellectual property</h2> <br />
+          Unless otherwise stated, all content (texts, images, projects, code) displayed on this website is the property of Florian Alzaix and may not be reused without prior permission.
+        }
+      </p-dialog>
+    </p-divider>
+  </div>
 </div>

@@ -6,9 +6,10 @@
   grid-template-columns: 60px auto 60px;
   grid-template-areas: 
     "title title title"
-    "contact projects menu";
+    "contact projects menu"
+    "footer footer footer";
 
-  overflow: hidden;
+  overflow: auto;
   padding-right: 8px;
 }
 
@@ -188,7 +189,7 @@
 
 .home-project-content {
   position: relative;
-  z-index: 999;
+  z-index: 1;
 
   min-height: 0;
   padding: 25px;
@@ -455,4 +456,12 @@
     var(--p-tertiary-color),
     var(--p-background)
   );
+}
+
+/**
+ *   Home footer container
+ */
+
+#home-footer-container {
+  grid-area: footer;
 }

@@ -8,6 +8,8 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { HomeTitleAnimation } from "../../../directives/animations/home-title-animation";
 import { VLineAnimation } from "../../../directives/animations/v-line-animation";
+import { DividerModule } from 'primeng/divider';
+import { DialogModule } from 'primeng/dialog';
 
 //
 //   Component
@@ -21,7 +23,9 @@ import { VLineAnimation } from "../../../directives/animations/v-line-animation"
     ButtonModule,
     ToastModule,
     HomeTitleAnimation,
-    VLineAnimation
+    VLineAnimation,
+    DividerModule,
+    DialogModule
 ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
@@ -50,6 +54,7 @@ export class HomePage {
   // Signals
 
   protected readonly language = signal<"en" | "fr">("en");
+  protected readonly isLegalDialogVisible = signal<boolean>(false);
 
   //
   //   Listeners
