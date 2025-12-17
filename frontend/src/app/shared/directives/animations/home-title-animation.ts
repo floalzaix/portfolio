@@ -54,11 +54,11 @@ export class HomeTitleAnimation {
     gsap.registerPlugin(ScrollTrigger);
 
     // Registering animations
-    // const animation = this.titleAppearsAnimation();
-    // if (animation) {
-    //   animation.play();
-    //   this.animations.push(animation);
-    // }
+    const animation = this.titleAppearsAnimation();
+    if (animation) {
+      animation.play();
+      this.animations.push(animation);
+    }
   }
 
   //
@@ -109,7 +109,7 @@ export class HomeTitleAnimation {
     //   Parameters
     //
     
-    const step1Duration = 0;
+    const step1Duration = 2;
     const step1XScale= (
       boxRect.width / lineTopRightRect.width
     );

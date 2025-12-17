@@ -27,15 +27,22 @@ export class VLineAnimation implements AfterViewInit {
   
   ngAfterViewInit() {
     if (this.enabled()) {
-      // Registering GSAP's pluggins
-      gsap.registerPlugin(ScrollTrigger)
+      setTimeout(() => {
+        // Verifying the presence ids and classes
+        if (!this.idScrollableContainer()) {
+          return;
+        }
 
-      // Registering animations
-      const cp = this.containerPinning();
-      if (cp) {
-        cp.play()
-        this.animations.push(cp)
-      }
+        // Registering GSAP's pluggins
+        gsap.registerPlugin(ScrollTrigger)
+
+        // Registering animations
+        const cp = this.containerPinning();
+        if (cp) {
+          cp.play()
+          this.animations.push(cp)
+        }
+      }, 16);
     }
   }
 
@@ -58,8 +65,20 @@ export class VLineAnimation implements AfterViewInit {
     if (!parentElement) {
       return;
     }
+    const containerRect = container.getBoundingClientRect();
+    const parentElementRect = parentElement.getBoundingClientRect();
 
     const tl = gsap.timeline();
+
+    //
+    //   Parameters
+    //
+    
+    const scrollOffset = (
+      (1 - containerRect.height / (parentElementRect.height + 60)) * 100 / 2
+    );
+
+    // console.log(scrollOffset);
 
     //
     //   ScrollTrigger
@@ -67,13 +86,13 @@ export class VLineAnimation implements AfterViewInit {
 
     tl.to(container, {
       scrollTrigger: {
-        trigger: container.parentElement.parentElement,
+        trigger: container.parentElement,
         scroller: "#" + this.idScrollableContainer(),
-        start: "top 25%",
-        end: "bottom 75%",
+        start: "top " + scrollOffset + "%",
+        end: "bottom " + (100 - scrollOffset) + "%",
         scrub: true,
-        markers: true,
         pin: container,
+        pinSpacing: false,
       }
     })
 
