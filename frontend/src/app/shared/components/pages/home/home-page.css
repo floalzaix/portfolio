@@ -221,6 +221,15 @@
 
 .home-project-content > h2 {
   text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.home-project-content h2 ::ng-deep .pi {
+  font-size: 4rem;
 }
 
 /* Projects details */

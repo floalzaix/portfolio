@@ -30,7 +30,11 @@
     <!-- Content -->
     <div id="home-title-content">
       <h1>Florian Alzaix</h1>
-      <p>Freelance full stack development</p>
+      @if (language() === 'en') {
+        <p>Freelance full stack development</p>
+      } @else if (language() === 'fr') {
+        <p>Freelance développement full-stack</p>
+      }
     </div>
 
     <!-- Right vertical line -->
@@ -95,7 +99,12 @@
             [style.align-self]="hasMedia ? 'flex-start' : 'center'"
             [style.width]="hasMedia ? '100%' : '80%'"
           >
-            <h2>{{ project.title }}</h2>
+            <h2>
+              @if (project.smallAnimation) {
+                <div [innerHTML]="project.smallAnimation"></div>
+              }
+              {{ project.title }}
+            </h2>
 
             <p-fieldset [legend]="language() === 'en' ? 'Goal' : 'Objectif'">
               <p>{{ project.goal }}</p>

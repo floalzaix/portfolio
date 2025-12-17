@@ -12,6 +12,7 @@ export const ProjectSchema = z.object({
   image: z.string().optional(),
   video: z.string().optional(),
   link: z.string().optional(),
+  smallAnimation: z.string().optional(),
 });
 
 export type Project = z.infer<typeof ProjectSchema>;

@@ -24,6 +24,7 @@ export const environment = {
         "studying. Therefore, be gentle: it was made to " +
         "train with my teammates.",
       video: "videos/mid.mp4",
+      smallAnimation: "<i class='pi pi-spin pi-cog'></i>"
     },
     {
       title: "ACCOUNT MANAGER",
@@ -46,7 +47,8 @@ export const environment = {
         "test). It's in French and the forgotten " +
         "password button is only for style.",
       link: "https://accounts-demo.floalz.fr",
-      image: "images/accounts.png"
+      image: "images/accounts.png",
+      smallAnimation: "<i class='pi pi-euro'></i>"
     },
     {
       title: "WATERMARKING TOOL",
@@ -66,7 +68,7 @@ export const environment = {
         "designs. The watermarking is a way to hide an " +
         "image under another.",
       link: "https://img.floalz.fr",
-      image: "images/watermark.png"
+      image: "images/watermark.png",
     },
     {
       title: "FLAPPY BIRD AI",
@@ -86,7 +88,7 @@ export const environment = {
       ],
       note:
         "It is the AI which is playing in the video!",
-      video: "videos/flappy-bird.mp4"
+      video: "videos/flappy-bird.mp4",
     },
     {
       title: "TETRIS",
@@ -112,7 +114,8 @@ export const environment = {
       note:
         "This time for the demonstration, " +
         "I played since the AI did not perform too well.",
-      video: "videos/tetris.mp4"
+      video: "videos/tetris.mp4",
+      smallAnimation: "<i class='pi pi-spin pi-th-large'></i>"
     },
     {
       title: "SPEECH-TO-TEXT (STT)",
@@ -133,7 +136,8 @@ export const environment = {
       ],
       note:
         "The average response time with GPU on Google Colab was 4 seconds.",
-      image: "images/stt.png"
+      image: "images/stt.png",
+      smallAnimation: "<i class='pi pi-microphone'></i>"
     },
     {
       title: "LLM HOSTING",
@@ -157,7 +161,7 @@ export const environment = {
         "Kubernetes for deployment and orchestrating",
         "MVC architecture"
       ],
-      note: "This project requires a significant amount of computing power, which is why no public demonstration is available. Furthermore, there is no dedicated frontend, as it is mostly backend. Nevertheless, it provided accurate results with response times proportional to the length of the answer. For answers of around 100 tokens, the latency was under 1 second with 10 simultaneous users. With additional time, I could have implemented streaming outputs for real-time answers, similar to current LLM designs."
+      note: "This project requires a significant amount of computing power, which is why no public demonstration is available. Furthermore, there is no dedicated frontend, as it is mostly backend. Nevertheless, it provided accurate results with response times proportional to the length of the answer. For answers of around 100 tokens, the latency was under 1 second with 10 simultaneous users. With additional time, I could have implemented streaming outputs for real-time answers, similar to current LLM designs.",
     },
     {
       title: "PUBLISHER V2",
@@ -185,7 +189,8 @@ export const environment = {
       note:
         "The focus was on rapid and functional features rather than UI.",
       link: "https://publisher.floalz.fr",
-      image: "images/publisher.png"
+      image: "images/publisher.png",
+      smallAnimation: "<i class='pi pi-facebook'></i>"
     },
   ]) as Project[],
 
@@ -211,6 +216,7 @@ export const environment = {
         "Le jeu a été conçu en une semaine et avait " +
         "pour but de nous entraîner entre coéquipiers.",
       video: "videos/mid.mp4",
+      smallAnimation: "<i class='pi pi-spin pi-cog'></i>"
     },
     {
       title: "GESTIONNAIRE DE COMPTE",
@@ -233,7 +239,8 @@ export const environment = {
         "test). L'interface est en français et le bouton " +
         "mot de passe oublié est purement décoratif.",
       link: "https://accounts-demo.floalz.fr",
-      image: "images/accounts.png"
+      image: "images/accounts.png",
+      smallAnimation: "<i class='pi pi-euro'></i>"
     },
     {
       title: "WATERMARKING TOOL",
@@ -253,7 +260,7 @@ export const environment = {
         "professionnels. Le watermarking est une manière de cacher une " +
         "image sous une autre.",
       link: "https://img.floalz.fr",
-      image: "images/watermark.png"
+      image: "images/watermark.png",
     },
     {
       title: "FLAPPY BIRD IA",
@@ -273,7 +280,7 @@ export const environment = {
       ],
       note:
         "C'est l'IA qui joue dans la vidéo !",
-      video: "videos/flappy-bird.mp4"
+      video: "videos/flappy-bird.mp4",
     },
     {
       title: "TETRIS",
@@ -299,7 +306,8 @@ export const environment = {
       note:
         "Pour la démonstration cette fois, " +
         "c'est moi qui ai joué puisque l'IA ne se débrouillait pas très bien.",
-      video: "videos/tetris.mp4"
+      video: "videos/tetris.mp4",
+      smallAnimation: "<i class='pi pi-spin pi-th-large'></i>"
     },
     {
       title: "SPEECH-TO-TEXT (STT)",
@@ -320,7 +328,8 @@ export const environment = {
       ],
       note:
         "Le temps de réponse moyen avec GPU sur Google Colab était de 4 secondes.",
-      image: "images/stt.png"
+      image: "images/stt.png",
+      smallAnimation: "<i class='pi pi-microphone'></i>"
     },
     {
       title: "HEBERGEMENT LLM ",
@@ -380,7 +389,8 @@ export const environment = {
       note:
         "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI.",
       link: "https://publisher.floalz.fr",
-      image: "images/publisher.png"
+      image: "images/publisher.png",
+      smallAnimation: "<i class='pi pi-facebook'></i>"
     },
   ]) as Project[],
 };
