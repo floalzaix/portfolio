@@ -35,7 +35,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -72,7 +72,8 @@
               "buildTarget": "portfolio:build:production"
             },
             "development": {
-              "buildTarget": "portfolio:build:development"
+              "buildTarget": "portfolio:build:development",
+              "allowedHosts": true
             }
           },
           "defaultConfiguration": "development"
