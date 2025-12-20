@@ -73,11 +73,6 @@
         [class.home-project-container-right]="$index % 2 !== 0"
       >
 
-        <!-- Lines for animation -->
-        @if (hasMedia) {
-          <div class="v-line"></div>
-        }
-
         @if (project.image) {
           <div
             #container
@@ -132,6 +127,11 @@
         }
 
         <div class="home-project-content-container">
+          <!-- Lines for animation -->
+          @if (hasMedia) {
+            <div class="v-line"></div>
+          }
+
           <div
             appVLineAnimation
             [idScrollableContainer]="'home-page-container'"

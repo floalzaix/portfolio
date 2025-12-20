@@ -26,24 +26,24 @@ export class VLineAnimation implements AfterViewInit {
   //
   
   ngAfterViewInit() {
-    if (this.enabled()) {
-      setTimeout(() => {
-        // Verifying the presence ids and classes
-        if (!this.idScrollableContainer()) {
-          return;
-        }
+    // if (this.enabled()) {
+    //   setTimeout(() => {
+    //     // Verifying the presence ids and classes
+    //     if (!this.idScrollableContainer()) {
+    //       return;
+    //     }
 
-        // Registering GSAP's pluggins
-        gsap.registerPlugin(ScrollTrigger)
+    //     // Registering GSAP's pluggins
+    //     gsap.registerPlugin(ScrollTrigger)
 
-        // Registering animations
-        const cp = this.containerPinning();
-        if (cp) {
-          cp.play()
-          this.animations.push(cp)
-        }
-      }, 16);
-    }
+    //     // Registering animations
+    //     const cp = this.containerPinning();
+    //     if (cp) {
+    //       cp.play()
+    //       this.animations.push(cp)
+    //     }
+    //   }, 16);
+    // }
   }
 
   //
