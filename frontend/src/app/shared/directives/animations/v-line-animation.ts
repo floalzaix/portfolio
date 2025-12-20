@@ -26,24 +26,24 @@ export class VLineAnimation implements AfterViewInit {
   //
   
   ngAfterViewInit() {
-    // if (this.enabled()) {
-    //   setTimeout(() => {
-    //     // Verifying the presence ids and classes
-    //     if (!this.idScrollableContainer()) {
-    //       return;
-    //     }
+    if (this.enabled()) {
+      setTimeout(() => {
+        // Verifying the presence ids and classes
+        if (!this.idScrollableContainer()) {
+          return;
+        }
 
-    //     // Registering GSAP's pluggins
-    //     gsap.registerPlugin(ScrollTrigger)
+        // Registering GSAP's pluggins
+        gsap.registerPlugin(ScrollTrigger)
 
-    //     // Registering animations
-    //     const cp = this.containerPinning();
-    //     if (cp) {
-    //       cp.play()
-    //       this.animations.push(cp)
-    //     }
-    //   }, 16);
-    // }
+        // Registering animations
+        const cp = this.containerPinning();
+        if (cp) {
+          cp.play()
+          this.animations.push(cp)
+        }
+      }, 16);
+    }
   }
 
   //
@@ -69,6 +69,11 @@ export class VLineAnimation implements AfterViewInit {
     const parentElementRect = parentElement.getBoundingClientRect();
     const parentHeight = parentElementRect.height + 60;
 
+    // Verifying the container width for mobile devices
+    if (containerRect.width < 1024) {
+      return;
+    }
+
     const tl = gsap.timeline();
 
     //
@@ -84,7 +89,7 @@ export class VLineAnimation implements AfterViewInit {
     //
     //   Offset
     //
-    
+
     tl.to(container, {
       y: parentHeight * offset,
       duration: 0,

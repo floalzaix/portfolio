@@ -73,7 +73,7 @@
         [class.home-project-container-right]="$index % 2 !== 0"
       >
 
-        @if (project.image) {
+        @if (project.image && !isHandset()) {
           <div
             #container
             class="home-project-media"
@@ -94,7 +94,7 @@
             <img [src]="project.image" [alt]="project.title" />
           </div>
         } 
-        @if (project.video) {
+        @if (project.video && !isHandset()) {
           <div
             #container
             class="home-project-media"
@@ -179,6 +179,27 @@
                       </a>
                     </div>
                   }
+                </p-fieldset>
+              }
+              
+              @if (project.image && isHandset()) {
+                <p-fieldset legend="Media" class="home-project-media">
+                  <img [src]="project.image" [alt]="project.title" />
+                </p-fieldset>
+              }
+              @if (project.video && isHandset()) {
+                <p-fieldset legend="Media" class="home-project-media">
+                  <video
+                    class="box"
+                    loop
+                    autoplay
+                    [muted]="true"
+                    playsinline
+                    alt="Project's video"
+                  >
+                    <source [src]="project.video" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </p-fieldset>
               }
             </div>

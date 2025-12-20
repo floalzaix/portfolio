@@ -10,6 +10,9 @@ import { HomeTitleAnimation } from "../../../directives/animations/home-title-an
 import { VLineAnimation } from "../../../directives/animations/v-line-animation";
 import { DividerModule } from 'primeng/divider';
 import { DialogModule } from 'primeng/dialog';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map, shareReplay } from 'rxjs';
 
 //
 //   Component
@@ -39,6 +42,7 @@ export class HomePage {
   private readonly document = inject(DOCUMENT);
   private readonly renderer = inject(Renderer2);
   private readonly messageService = inject(MessageService);
+  private readonly breakpointObserver = inject(BreakpointObserver);
 
   //
   //   Properties
@@ -64,6 +68,14 @@ export class HomePage {
   onFullScreenChange(event: Event) {
     this.isFullScreen.set(!!document.fullscreenElement);
   }
+
+  protected isHandset = toSignal(this.breakpointObserver
+    .observe([Breakpoints.Handset])
+    .pipe(
+      map(result => result.matches),
+      shareReplay({ bufferSize: 1, refCount: true })
+  ));
+
 
   //
   //   Other methods
