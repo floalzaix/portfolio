@@ -135,7 +135,7 @@
           <div
             appVLineAnimation
             [idScrollableContainer]="'home-page-container'"
-            [enabled]="hasMedia"
+            [enabled]="hasMedia && !isHandset()"
             class="home-project-content"
             [style.align-self]="hasMedia ? 'flex-start' : 'center'"
             [style.width]="hasMedia ? '100%' : '80%'"

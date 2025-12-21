@@ -15,14 +15,12 @@
 
 @media (max-width: 1024px) {
   #home-page-container {
-    padding-right: 0px;
+    padding-right: 4px;
     
     grid-template-columns: 1fr;
     grid-template-areas: 
       "title"
-      "contact"
       "projects"
-      "menu"
       "footer";
   }
 }
@@ -457,6 +455,12 @@
   grid-area: contact;
 }
 
+@media (max-width: 1024px) {
+  #home-contact-container {
+    grid-area: auto;
+  }
+}
+
 #home-contact-content {
   position: sticky;
   top: 0;
@@ -470,10 +474,21 @@
 
 @media (max-width: 1024px) {
   #home-contact-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
     width: 100%;
     height: 60px;
 
     flex-direction: row;
+    
+    background: linear-gradient(
+      to top,
+      transparent 0%,
+      var(--p-background) 50%
+    );
   }
 }
 
@@ -549,6 +564,12 @@
   grid-area: menu;
 }
 
+@media (max-width: 1024px) {
+  #home-menu-container {
+    grid-area: auto;
+  }
+}
+
 #home-menu-content {
   position: sticky;
   top: 0;
@@ -558,6 +579,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  #home-menu-content {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 60px;
+
+    flex-direction: row;
+
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--p-background) 50%
+    );
+  }
 }
 
 /**

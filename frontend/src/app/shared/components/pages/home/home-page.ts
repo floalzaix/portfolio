@@ -73,7 +73,6 @@ export class HomePage {
     .observe([Breakpoints.Handset])
     .pipe(
       map(result => result.matches),
-      shareReplay({ bufferSize: 1, refCount: true })
   ));
 
 

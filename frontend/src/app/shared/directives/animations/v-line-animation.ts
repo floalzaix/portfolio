@@ -69,11 +69,6 @@ export class VLineAnimation implements AfterViewInit {
     const parentElementRect = parentElement.getBoundingClientRect();
     const parentHeight = parentElementRect.height + 60;
 
-    // Verifying the container width for mobile devices
-    if (containerRect.width < 1024) {
-      return;
-    }
-
     const tl = gsap.timeline();
 
     //
