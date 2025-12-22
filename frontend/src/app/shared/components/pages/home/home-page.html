@@ -126,7 +126,13 @@
           </div>
         }
 
-        <div class="home-project-content-container">
+        <div
+          appContentAnimation
+          [idScrollableContainer]="'home-page-container'"
+          [left]="$index % 2 === 0"
+          [enabled]="isHandset() ?? false"
+          class="home-project-content-container"
+        >
           <!-- Lines for animation -->
           @if (hasMedia) {
             <div class="v-line"></div>

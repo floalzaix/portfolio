@@ -72,8 +72,6 @@ export class MenuAnimation implements AfterViewInit {
       },
     });
 
-    console.log(mainContent);
-
     //
     //  Scroll 
     //

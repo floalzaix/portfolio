@@ -14,6 +14,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map, shareReplay } from 'rxjs';
 import { MenuAnimation } from "../../../directives/animations/menu-animation";
+import { ContentAnimation } from "../../../directives/animations/content-animation";
 
 //
 //   Component
@@ -30,7 +31,8 @@ import { MenuAnimation } from "../../../directives/animations/menu-animation";
     VLineAnimation,
     DividerModule,
     DialogModule,
-    MenuAnimation
+    MenuAnimation,
+    ContentAnimation
 ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',

@@ -1,6 +1,7 @@
 import { AfterViewInit, Directive, ElementRef, inject, input } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { DOCUMENT } from '@angular/common';
 
 @Directive({
   selector: '[appContentAnimation]'
@@ -10,7 +11,12 @@ export class ContentAnimation implements AfterViewInit {
   //   Interfaces
   //
 
+  public readonly idScrollableContainer = input<string>('');
+  public readonly left = input<boolean>(false);
+  public readonly enabled = input<boolean>(false);
+
   private readonly elementRef = inject(ElementRef);
+  private readonly document = inject(DOCUMENT);
 
   //
   //   Properties
@@ -23,25 +29,54 @@ export class ContentAnimation implements AfterViewInit {
   //
   
   ngAfterViewInit() {
+    if (!this.enabled()) return;
+    
     // Registering GSAP's pluggins
     gsap.registerPlugin(ScrollTrigger);
 
     // Registering animations
-    // const animation = this.contentAnimation();
-    // if (animation) {
-    //   animation.play();
-    //   this.animations.push(animation);
-    // }
+    const animation = this.contentAnimation();
+    if (animation) {
+      this.animations.push(animation);
+    }
   }
 
   //
   //   Animations
   //
   
-  // private contentAnimation(): gsap.core.Timeline | undefined {
-  //   const tl = gsap.timeline();
-  //   return tl;
-  // }
+  private contentAnimation(): gsap.core.Timeline | undefined {
+    const content = this.elementRef.nativeElement;
+
+    // Getting the scrollable container and the width of the content
+    const scrollableContainer = this.document.getElementById(
+      this.idScrollableContainer()
+    );
+    const contentWidth = content.offsetWidth;
+
+    if (!scrollableContainer || !contentWidth) {
+      return;
+    }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: content,
+        scroller: scrollableContainer,
+        start: "top 95%",
+        end: "bottom bottom",
+        markers: true,
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    tl.from(content, {
+      x: (this.left() ? -contentWidth: contentWidth),
+      duration: 1.5,
+      ease: "bounce.out",
+    });
+
+    return tl;
+  }
 
   //
   //   Destroy
