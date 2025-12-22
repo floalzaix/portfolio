@@ -210,7 +210,14 @@
   </div>
 
   <div id="home-contact-container">
-    <div id="home-contact-content">
+    <div
+      appMenuAnimation
+      [mainContentId]="'home-projects-container'"
+      [idScrollableContainer]="'home-page-container'"
+      [bottomAndNotTop]="false"
+      [enabled]="isHandset() ?? false"
+      id="home-contact-content"
+    >
       <div class="home-content-line"></div>
       <div
         id="home-contact-content-email"
@@ -224,7 +231,14 @@
   </div>
 
   <div id="home-menu-container">
-    <div id="home-menu-content">
+    <div
+      appMenuAnimation
+      [mainContentId]="'home-projects-container'"
+      [idScrollableContainer]="'home-page-container'"
+      [bottomAndNotTop]="true"
+      [enabled]="isHandset() ?? false"
+      id="home-menu-content"
+    >
       <div class="home-content-line"></div>
       <p-button
         icon="pi pi-sun"

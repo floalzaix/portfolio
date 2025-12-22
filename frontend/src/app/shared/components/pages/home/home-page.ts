@@ -13,6 +13,7 @@ import { DialogModule } from 'primeng/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map, shareReplay } from 'rxjs';
+import { MenuAnimation } from "../../../directives/animations/menu-animation";
 
 //
 //   Component
@@ -28,7 +29,8 @@ import { map, shareReplay } from 'rxjs';
     HomeTitleAnimation,
     VLineAnimation,
     DividerModule,
-    DialogModule
+    DialogModule,
+    MenuAnimation
 ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
