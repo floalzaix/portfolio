@@ -62,9 +62,8 @@ export class ContentAnimation implements AfterViewInit {
       scrollTrigger: {
         trigger: content,
         scroller: scrollableContainer,
-        start: "top 95%",
+        start: "top 70%",
         end: "bottom bottom",
-        markers: true,
         toggleActions: "play none none reverse"
       }
     });

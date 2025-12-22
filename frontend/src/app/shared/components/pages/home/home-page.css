@@ -10,11 +10,13 @@
     "contact projects menu"
     "footer footer footer";
 
-  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 @media (max-width: 1024px) {
   #home-page-container {
+    height: 100dvh;
     padding-right: 4px;
     
     grid-template-columns: 1fr;
@@ -419,19 +421,21 @@
   }
 }
 
-.home-project-media:hover {
-  cursor: pointer;
+@media (min-width: 1024px) {
+  .home-project-media:hover {
+    cursor: pointer;
 
-  background: radial-gradient(
-    circle at center,
-    var(--p-background) 20%,
-    var(--p-fifth-color) 27%,
-    var(--p-secondary-color) 40%,
-    var(--p-primary-color) 50%,
-    var(--p-secondary-color) 60%,
-    var(--p-tertiary-color) 70%,
-    var(--p-background) 73%
-  );
+    background: radial-gradient(
+      circle at center,
+      var(--p-background) 20%,
+      var(--p-fifth-color) 27%,
+      var(--p-secondary-color) 40%,
+      var(--p-primary-color) 50%,
+      var(--p-secondary-color) 60%,
+      var(--p-tertiary-color) 70%,
+      var(--p-background) 73%
+    );
+  }
 }
 
 .home-project-media img, .home-project-media video {
@@ -637,4 +641,10 @@
 
 #home-footer-container {
   grid-area: footer;
+}
+
+@media (max-width: 1024px) {
+  #home-footer-container {
+    margin-bottom: 200px;
+  }
 }

@@ -89,6 +89,12 @@ h2 {
   width: 50%;
 }
 
+@media (max-width: 1024px) {
+  .p-dialog {
+    width: 90%;
+  }
+}
+
 .p-dialog-title {
   font-size: 3rem;
   color: var(--p-primary-color);
@@ -97,4 +103,16 @@ h2 {
 .p-dialog-content {
   white-space: normal;
   word-wrap: break-word;
+}
+
+@media (max-width: 1024px) {
+  .p-dialog-content {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .p-toast {
+    max-width: 90%;
+  }
 }
