@@ -1,7 +1,14 @@
-import { AfterViewInit, Directive, ElementRef, inject, input } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  inject,
+  input,
+  PLATFORM_ID,
+} from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformServer } from '@angular/common';
 
 @Directive({
   selector: '[appContentAnimation]'
@@ -17,6 +24,7 @@ export class ContentAnimation implements AfterViewInit {
 
   private readonly elementRef = inject(ElementRef);
   private readonly document = inject(DOCUMENT);
+  private readonly platform = inject(PLATFORM_ID);
 
   //
   //   Properties
@@ -30,6 +38,7 @@ export class ContentAnimation implements AfterViewInit {
   
   ngAfterViewInit() {
     if (!this.enabled()) return;
+    if (isPlatformServer(this.platform)) return;
     
     // Registering GSAP's pluggins
     gsap.registerPlugin(ScrollTrigger);
@@ -70,7 +79,7 @@ export class ContentAnimation implements AfterViewInit {
 
     tl.from(content, {
       x: (this.left() ? -contentWidth: contentWidth),
-      duration: 1.5,
+      duration: 0.75,
       ease: "bounce.out",
     });
 

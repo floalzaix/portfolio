@@ -5,8 +5,9 @@ import {
   inject,
   input,
   signal,
+  PLATFORM_ID,
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformServer } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -25,6 +26,7 @@ export class MenuAnimation implements AfterViewInit {
   
   private readonly elementRef = inject(ElementRef);
   private readonly document = inject(DOCUMENT);
+  private readonly platform = inject(PLATFORM_ID);
 
   //
   //   Properties
@@ -40,6 +42,8 @@ export class MenuAnimation implements AfterViewInit {
     if (!this.enabled()) return;
 
     if (!this.mainContentId()) return;
+
+    if (isPlatformServer(this.platform)) return;
 
     // Registering GSAP's pluggins
     gsap.registerPlugin(ScrollTrigger);

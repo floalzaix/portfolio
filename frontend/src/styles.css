@@ -13,6 +13,7 @@ html {
 
 html, body {
   margin: 0;
+
   font-family: Roboto,"Helvetica Neue", sans-serif;
   background: var(--p-background);
 
@@ -87,6 +88,7 @@ h2 {
 
 .p-dialog {
   width: 50%;
+  border-radius: 0 !important;
 }
 
 @media (max-width: 1024px) {
@@ -115,4 +117,8 @@ h2 {
   .p-toast {
     max-width: 90%;
   }
+}
+
+.p-button {
+  border-radius: 0 !important;
 }

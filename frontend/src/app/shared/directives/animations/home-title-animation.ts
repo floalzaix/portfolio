@@ -1,4 +1,5 @@
-import { Directive, DOCUMENT, ElementRef, inject, input } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { Directive, DOCUMENT, ElementRef, inject, input, PLATFORM_ID } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -25,6 +26,7 @@ export class HomeTitleAnimation {
   public readonly idLineBottomLeft = input<string>("");
   public readonly idBox = input<string>("");
 
+  private readonly platform = inject(PLATFORM_ID);
   private readonly document = inject(DOCUMENT);
   private readonly elementRef = inject(ElementRef);
 
@@ -50,15 +52,17 @@ export class HomeTitleAnimation {
       return;
     }
 
+    if (isPlatformServer(this.platform)) return;
+
     // Initialising ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
     // Registering animations
-    const animation = this.titleAppearsAnimation();
-    if (animation) {
-      animation.play();
-      this.animations.push(animation);
-    }
+    // const animation = this.titleAppearsAnimation();
+    // if (animation) {
+    //   animation.play();
+    //   this.animations.push(animation);
+    // }
   }
 
   //

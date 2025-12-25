@@ -1,6 +1,6 @@
 #home-page-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100%;
   padding-right: 8px;
 
   display: grid;
@@ -10,7 +10,7 @@
     "contact projects menu"
     "footer footer footer";
 
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -39,7 +39,7 @@
 #home-title-container {
   position: relative;
 
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
 
   display: flex;
@@ -269,6 +269,7 @@
   z-index: 1;
 
   min-height: 0;
+  max-height: 80%;
   padding: 25px;
 
   display: flex;
@@ -291,6 +292,8 @@
   box-shadow:
     0 -15px 9px var(--p-background),
     0  15px 9px var(--p-background);
+
+  overflow-y: auto;
 }
 
 @media (max-width: 1024px) {
@@ -558,6 +561,11 @@
       var(--p-background)
     );
   }
+}
+
+#home-contact-container a {
+  min-width: 40px;
+  min-height: 36px;
 }
 
 /**

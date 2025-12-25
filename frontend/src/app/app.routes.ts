@@ -3,11 +3,11 @@ import { HomePage } from './shared/components/pages/home/home-page';
 
 export const routes: Routes = [
   {
-    path: "home",
+    path: "",
     component: HomePage,
   },
   {
     path: "**",
-    redirectTo: "/home",
+    redirectTo: "",
   }
 ];

@@ -12,7 +12,7 @@ import { DividerModule } from 'primeng/divider';
 import { DialogModule } from 'primeng/dialog';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map, shareReplay } from 'rxjs';
+import { map } from 'rxjs';
 import { MenuAnimation } from "../../../directives/animations/menu-animation";
 import { ContentAnimation } from "../../../directives/animations/content-animation";
 
@@ -48,6 +48,7 @@ export class HomePage {
   private readonly messageService = inject(MessageService);
   private readonly breakpointObserver = inject(BreakpointObserver);
 
+
   //
   //   Properties
   //
@@ -79,7 +80,6 @@ export class HomePage {
       map(result => result.matches),
   ));
 
-
   //
   //   Other methods
   //
@@ -101,14 +101,17 @@ export class HomePage {
 
   protected toggleTheme() {
     const htmlElement = this.document.querySelector("html");
-    if (!htmlElement) return;
+    const iconElement = this.document.querySelector("link[rel='icon']");
+    if (!htmlElement || !iconElement) return;
 
     if (this.isDarkMode()) {
       this.renderer.removeClass(htmlElement, "dark-mode");
       this.isDarkMode.set(false);
+      this.renderer.setAttribute(iconElement, "href", "J.png");
     } else {
       this.renderer.addClass(htmlElement, "dark-mode");
       this.isDarkMode.set(true);
+      this.renderer.setAttribute(iconElement, "href", "N.png");
     }
   }
   

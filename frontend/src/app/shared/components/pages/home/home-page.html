@@ -185,6 +185,13 @@
                       </a>
                     </div>
                   }
+                  @if (project.code) {
+                    <div class="home-project-details-right-button">
+                      <a pButton [href]="project.code" target="_blank">
+                        <i class="pi pi-code"></i>
+                      </a>
+                    </div>
+                  }
                 </p-fieldset>
               }
               
@@ -225,6 +232,10 @@
       id="home-contact-content"
     >
       <div class="home-content-line"></div>
+      <a pButton [href]="'http://www.linkedin.com/in/florian-alzaix-7470362b7'" target="_blank">
+        <i class="pi pi-linkedin"></i>
+      </a>
+      <div class="home-content-line"></div>
       <div
         id="home-contact-content-email"
         (click)="copyToClipboard('floalzfencing@gmail.com')"
@@ -232,6 +243,10 @@
         <i class="pi pi-copy" style="font-size: 0.8rem;"></i>
         <span>floalzfencing@gmail.com</span>
       </div>
+      <div class="home-content-line"></div>
+      <a pButton [href]="'https://github.com/floalzaix'" target="_blank">
+        <i class="pi pi-github"></i>
+      </a>
       <div class="home-content-line"></div>
     </div>
   </div>

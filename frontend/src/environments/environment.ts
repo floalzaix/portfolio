@@ -24,7 +24,8 @@ export const environment = {
         "studying. Therefore, be gentle: it was made to " +
         "train with my teammates.",
       video: "videos/mid.mp4",
-      smallAnimation: "<i class='pi pi-spin pi-cog'></i>"
+      smallAnimation: "<i class='pi pi-spin pi-cog'></i>",
+      code: "https://github.com/floalzaix/MineIntotheDeep",
     },
     {
       title: "ACCOUNT MANAGER",
@@ -48,7 +49,8 @@ export const environment = {
         "password button is only for style.",
       link: "https://accounts-demo.floalz.fr",
       image: "images/accounts.png",
-      smallAnimation: "<i class='pi pi-euro'></i>"
+      smallAnimation: "<i class='pi pi-euro'></i>",
+      code: "https://github.com/floalzaix/accounts",
     },
     {
       title: "WATERMARKING TOOL",
@@ -69,6 +71,7 @@ export const environment = {
         "image under another.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png",
+      code: "https://github.com/floalzaix/img"
     },
     {
       title: "FLAPPY BIRD AI",
@@ -89,6 +92,7 @@ export const environment = {
       note:
         "It is the AI which is playing in the video!",
       video: "videos/flappy-bird.mp4",
+      code: "https://github.com/floalzaix/flappy_bird_ai"
     },
     {
       title: "TETRIS",
@@ -137,7 +141,8 @@ export const environment = {
       note:
         "The average response time with GPU on Google Colab was 4 seconds.",
       image: "images/stt.png",
-      smallAnimation: "<i class='pi pi-microphone'></i>"
+      smallAnimation: "<i class='pi pi-microphone'></i>",
+      code: "https://github.com/floalzaix/tetris"
     },
     {
       title: "LLM HOSTING",
@@ -162,6 +167,7 @@ export const environment = {
         "MVC architecture"
       ],
       note: "This project requires a significant amount of computing power, which is why no public demonstration is available. Furthermore, there is no dedicated frontend, as it is mostly backend. Nevertheless, it provided accurate results with response times proportional to the length of the answer. For answers of around 100 tokens, the latency was under 1 second with 10 simultaneous users. With additional time, I could have implemented streaming outputs for real-time answers, similar to current LLM designs.",
+      code: "https://github.com/Scieries-Reunies-de-l-Est/llm"
     },
     {
       title: "PUBLISHER V2",
@@ -190,7 +196,8 @@ export const environment = {
         "The focus was on rapid and functional features rather than UI. And this is a demonstration, therefore not all features are available (Meta specific authorizations).",
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
-      smallAnimation: "<i class='pi pi-facebook'></i>"
+      smallAnimation: "<i class='pi pi-facebook'></i>",
+      code: "https://github.com/floalzaix/publisher-v2"
     },
   ]) as Project[],
 
@@ -216,7 +223,8 @@ export const environment = {
         "Le jeu a été conçu en une semaine et avait " +
         "pour but de nous entraîner entre coéquipiers.",
       video: "videos/mid.mp4",
-      smallAnimation: "<i class='pi pi-spin pi-cog'></i>"
+      smallAnimation: "<i class='pi pi-spin pi-cog'></i>",
+      code: "https://github.com/floalzaix/MineIntotheDeep",
     },
     {
       title: "GESTIONNAIRE DE COMPTE",
@@ -240,7 +248,8 @@ export const environment = {
         "mot de passe oublié est purement décoratif.",
       link: "https://accounts-demo.floalz.fr",
       image: "images/accounts.png",
-      smallAnimation: "<i class='pi pi-euro'></i>"
+      smallAnimation: "<i class='pi pi-euro'></i>",
+      code: "https://github.com/floalzaix/accounts",
     },
     {
       title: "WATERMARKING TOOL",
@@ -261,6 +270,7 @@ export const environment = {
         "image sous une autre.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png",
+      code: "https://github.com/floalzaix/img",
     },
     {
       title: "FLAPPY BIRD IA",
@@ -281,6 +291,7 @@ export const environment = {
       note:
         "C'est l'IA qui joue dans la vidéo !",
       video: "videos/flappy-bird.mp4",
+      code: "https://github.com/floalzaix/flappy_bird_ai",
     },
     {
       title: "TETRIS",
@@ -329,7 +340,8 @@ export const environment = {
       note:
         "Le temps de réponse moyen avec GPU sur Google Colab était de 4 secondes.",
       image: "images/stt.png",
-      smallAnimation: "<i class='pi pi-microphone'></i>"
+      smallAnimation: "<i class='pi pi-microphone'></i>",
+      code: "https://github.com/floalzaix/tetris",
     },
     {
       title: "HEBERGEMENT LLM ",
@@ -362,6 +374,7 @@ export const environment = {
         "100 tokens, la latence restait sous la seconde avec 10 utilisateurs " +
         "simultanés. Avec plus de temps, j'aurais pu implémenter un flux sortant " +
         "en streaming pour des réponses en temps réel, comme sur les LLM actuels.",
+      code: "https://github.com/Scieries-Reunies-de-l-Est/llm",
     },
     {
       title: "PUBLISHER V2",
@@ -390,7 +403,8 @@ export const environment = {
         "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI. Et ceci est une démonstration, par conséquent les fonctionnalités ne sont pas toutes disponibles (authorizatons Meta propres à l'entreprise).",
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
-      smallAnimation: "<i class='pi pi-facebook'></i>"
+      smallAnimation: "<i class='pi pi-facebook'></i>",
+      code: "https://github.com/floalzaix/publisher-v2",
     },
   ]) as Project[],
 };

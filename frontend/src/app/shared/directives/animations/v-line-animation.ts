@@ -1,4 +1,12 @@
-import { AfterViewInit, Directive, ElementRef, inject, input } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  inject,
+  input,
+  PLATFORM_ID
+} from '@angular/core';
+import { isPlatformServer } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -14,6 +22,7 @@ export class VLineAnimation implements AfterViewInit {
   public readonly enabled = input<boolean>(true);
   
   private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly platform = inject(PLATFORM_ID);
 
   //
   //   Properties
@@ -26,7 +35,7 @@ export class VLineAnimation implements AfterViewInit {
   //
   
   ngAfterViewInit() {
-    if (this.enabled()) {
+    if (this.enabled() && !isPlatformServer(this.platform)) {
       setTimeout(() => {
         // Verifying the presence ids and classes
         if (!this.idScrollableContainer()) {
@@ -99,7 +108,7 @@ export class VLineAnimation implements AfterViewInit {
         trigger: container.parentElement,
         scroller: "#" + this.idScrollableContainer(),
         start: "top " + (scrollOffset - offset * 100 ) + "%",
-        end: "bottom " + (100 - scrollOffset + offset * 100) + "%",
+        end: "bottom " + (100 - scrollOffset + offset * 100 / 2) + "%",
         scrub: true,
         pin: container,
         pinSpacing: false,
