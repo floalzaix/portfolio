@@ -71,7 +71,7 @@ export const environment = {
         "image under another.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png",
-      code: "https://github.com/floalzaix/img",
+      code: "https://github.com/floalzaix/img"
     },
     {
       title: "FLAPPY BIRD AI",
@@ -92,7 +92,7 @@ export const environment = {
       note:
         "It is the AI which is playing in the video!",
       video: "videos/flappy-bird.mp4",
-      code: "https://github.com/floalzaix/flappy_bird_ai",
+      code: "https://github.com/floalzaix/flappy_bird_ai"
     },
     {
       title: "TETRIS",
@@ -142,7 +142,7 @@ export const environment = {
         "The average response time with GPU on Google Colab was 4 seconds.",
       image: "images/stt.png",
       smallAnimation: "<i class='pi pi-microphone'></i>",
-      code: "https://github.com/floalzaix/tetris",
+      code: "https://github.com/floalzaix/tetris"
     },
     {
       title: "LLM HOSTING",
@@ -156,7 +156,6 @@ export const environment = {
       techs: [
         "FastAPI for API layer",
         "Transformers for model and tokenizer",
-        "Datasets to load training material",
         "LangChain to connect to vLLM API",
         "LangGraph for structured output",
         "Redis to store the API state",
@@ -167,7 +166,7 @@ export const environment = {
         "MVC architecture"
       ],
       note: "This project requires a significant amount of computing power, which is why no public demonstration is available. Furthermore, there is no dedicated frontend, as it is mostly backend. Nevertheless, it provided accurate results with response times proportional to the length of the answer. For answers of around 100 tokens, the latency was under 1 second with 10 simultaneous users. With additional time, I could have implemented streaming outputs for real-time answers, similar to current LLM designs.",
-      code: "https://github.com/Scieries-Reunies-de-l-Est/llm",
+      code: "https://github.com/Scieries-Reunies-de-l-Est/llm"
     },
     {
       title: "PUBLISHER V2",
@@ -197,7 +196,7 @@ export const environment = {
       link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
       smallAnimation: "<i class='pi pi-facebook'></i>",
-      code: "https://github.com/floalzaix/publisher-v2",
+      code: "https://github.com/floalzaix/publisher-v2"
     },
   ]) as Project[],
 
@@ -355,7 +354,6 @@ export const environment = {
       techs: [
         "FastAPI pour la couche API",
         "Transformers pour le modèle et le tokenizer",
-        "Datasets pour charger les données d'entraînement",
         "LangChain pour se connecter à l'API vLLM",
         "LangGraph pour les sorties structurées",
         "Redis pour stocker l'état de l'API",

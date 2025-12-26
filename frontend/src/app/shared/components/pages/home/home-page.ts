@@ -75,7 +75,7 @@ export class HomePage {
   }
 
   protected isHandset = toSignal(this.breakpointObserver
-    .observe([Breakpoints.Handset])
+    .observe(['(max-width: 1024px)'])
     .pipe(
       map(result => result.matches),
   ));

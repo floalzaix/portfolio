@@ -269,14 +269,8 @@
   z-index: 1;
 
   min-height: 0;
-  max-height: 80%;
+  max-height: 97vh;
   padding: 25px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 20px;
 
   background-color: var(--p-surface-color);
   border: 1px solid;
@@ -299,6 +293,7 @@
 @media (max-width: 1024px) {
   .home-project-content {
     width: 100% !important;
+    max-height: none;
 
     box-shadow: none;
   }

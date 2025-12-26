@@ -156,7 +156,6 @@ export const environment = {
       techs: [
         "FastAPI for API layer",
         "Transformers for model and tokenizer",
-        "Datasets to load training material",
         "LangChain to connect to vLLM API",
         "LangGraph for structured output",
         "Redis to store the API state",
@@ -355,7 +354,6 @@ export const environment = {
       techs: [
         "FastAPI pour la couche API",
         "Transformers pour le modèle et le tokenizer",
-        "Datasets pour charger les données d'entraînement",
         "LangChain pour se connecter à l'API vLLM",
         "LangGraph pour les sorties structurées",
         "Redis pour stocker l'état de l'API",

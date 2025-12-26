@@ -84,11 +84,16 @@ export class VLineAnimation implements AfterViewInit {
     //   Parameters
     //
 
-    const offset = 0.1;
+    let offset = 0.1;
     
     const scrollOffset = (
       (1 - containerRect.height / parentHeight) * 100 / 2
     );
+
+    // Verifying the needed space for the offset
+    if (containerRect.height > (1 - 2 * offset) * parentHeight) {
+      offset = 0;
+    }
 
     //
     //   Offset
