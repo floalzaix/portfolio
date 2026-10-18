@@ -31,16 +31,16 @@ export const environment = {
       title: "ACCOUNT MANAGER",
       goal:
         "This project was made to ease " +
-        "the tracking of mine and my girlfriend's " +
+        "the tracking of my " +
         "transactions. Like Excel, it lists " +
-        "transactions, adds categories, gives " +
+        "transactions but it also adds categories, gives " +
         "per-category details and monthly " +
         "summaries.",
       techs: [
         "PHP backend",
         "HTML CSS JS frontend",
         "Monolithic and MVC",
-        "Uses blade to serve HTML",
+        "Uses Blade to serve HTML",
         "Docker for deployment"
       ],
       note:
@@ -53,11 +53,35 @@ export const environment = {
       code: "https://github.com/floalzaix/accounts",
     },
     {
+      title: "ACCOUNT MANAGER V2",
+      goal:
+        "This project is a continuation of the previous one. It is " +
+        "an improved version, as it uses Angular and FastAPI. It is " +
+        "meant to ease AI integration into the app.",
+      techs: [
+        "FastAPI",
+        "Angular",
+        "Hexagonal architecture",
+        "Feature pattern",
+        "Postman for the tests",
+        "Nginx",
+        "Docker Compose for deployment"
+      ],
+      note:
+        "Demo available. Use (id, pwd)=(test@test.com, " +
+        "test). It's in French and the forgotten " +
+        "password button is only for style (still).",
+      link: "https://accountsv2.floalz.fr",
+      video: "videos/accountsv2.mp4",
+      smallAnimation: "<i class='pi pi-euro'></i>",
+      code: "https://github.com/floalzaix/accountsv2",
+    },
+    {
       title: "WATERMARKING TOOL",
       goal:
-        "Intended for my mother to watermark some " +
+        "Intended as a gift for someone who loves photography to watermark some " +
         "pictures for fun. It gave me the chance to try Angular " +
-        "and a new type of more modern and faster design! ",
+        "and a new type of more modern and faster design!",
       techs: [
         "FastAPI (Python) backend",
         "Angular frontend",
@@ -67,7 +91,7 @@ export const environment = {
       ],
       note:
         "It was my first try at a little bit more professional " +
-        "designs. The watermarking is a way to hide an " +
+        "design. The watermarking is a way to hide an " +
         "image under another.",
       link: "https://img.floalz.fr",
       image: "images/watermark.png",
@@ -76,12 +100,12 @@ export const environment = {
     {
       title: "FLAPPY BIRD AI",
       goal:
-        "Fun! Recreated the flappy bird game " +
+        "Fun! Recreated the Flappy Bird game " +
         "with squares. Two versions: the first to try and the second " +
         "for easier AI integration. I trained a " +
         "Q-Learning model to play on it. After a week, " +
         "the AI average score was 50. Q-Learning wasn't " +
-        "enough to go further, maybe with more " +
+        "enough to go further; maybe with more " +
         "training time it could still improve.",
       techs: [
         "Mostly Python",
@@ -90,7 +114,7 @@ export const environment = {
         "MVC"
       ],
       note:
-        "It is the AI which is playing in the video!",
+        "It is the AI that is playing in the video!",
       video: "videos/flappy-bird.mp4",
       code: "https://github.com/floalzaix/flappy_bird_ai"
     },
@@ -98,17 +122,17 @@ export const environment = {
       title: "TETRIS",
       goal:
         "School project: guided Tetris. I trained " +
-        "an AI (like Flappy bird). I tried Q-Learning at " +
+        "an AI (like Flappy Bird). I tried Q-Learning at " +
         "first, but the results were not great. Then " +
         "Q-Networks, Dueling Q-Network, Double " +
         "Q-Network. Some progress was made, but still a bit weak. " +
         "Combined (D2QN) but no real gain. My " +
         "inexperience and lack of computing power " +
         "limited the AI. However, Tetris matched the " +
-        "original and I added some small extras: with multiplayer, " +
+        "original and I added some small extras: multiplayer, " +
         "ghost pieces, " +
-        "and keyboard controls (not included in the school's project, "+
-        "though it is in the original game).",
+        "and keyboard controls (not included in the school's project, " +
+        "though they are in the original game).",
       techs: [
         "Java for frontend and backend",
         "Monolithic and MVC",
@@ -116,8 +140,7 @@ export const environment = {
         "Ngrok, WebSocket for local play"
       ],
       note:
-        "This time for the demonstration, " +
-        "I played since the AI did not perform too well.",
+        "Demo",
       video: "videos/tetris.mp4",
       smallAnimation: "<i class='pi pi-spin pi-th-large'></i>"
     },
@@ -125,12 +148,12 @@ export const environment = {
       title: "SPEECH-TO-TEXT (STT)",
       goal:
         "First week of my Cechas internship: " +
-        "I was tasked to use Kyutai's STT model and " +
-        "build a transcription API. After a week, the backend " +
+        "I was tasked with using Kyutai's STT model and " +
+        "building a transcription API. After a week, the backend " +
         "was ready, frontend not fully completed. The project " +
         "was dropped when Kyutai released their " +
         "Unmute product, which was the same as I had done but " +
-        "including the TTS (Text-to-speech) and production ready.",
+        "including the TTS (Text-to-Speech) and production-ready.",
       techs: [
         "FastAPI (Python) backend",
         "Tkinter demo frontend",
@@ -161,8 +184,8 @@ export const environment = {
         "Redis to store the API state",
         "vLLM to deploy LLM server",
         "LoRA for finetuning",
-        "Docker for the APIs containers",
-        "Kubernetes for deployment and orchestrating",
+        "Docker for the API containers",
+        "Kubernetes for deployment and orchestration",
         "MVC architecture"
       ],
       note: "This project requires a significant amount of computing power, which is why no public demonstration is available. Furthermore, there is no dedicated frontend, as it is mostly backend. Nevertheless, it provided accurate results with response times proportional to the length of the answer. For answers of around 100 tokens, the latency was under 1 second with 10 simultaneous users. With additional time, I could have implemented streaming outputs for real-time answers, similar to current LLM designs.",
@@ -192,11 +215,35 @@ export const environment = {
         "Uses repository pattern"
       ],
       note:
-        "The focus was on rapid and functional features rather than UI. And this is a demonstration, therefore not all features are available (Meta specific authorizations). Indeed all the Meta part is absent and it is only a demonstration of the UI and auth feature.",
-      link: "https://publisher.floalz.fr",
+        "The focus was on rapid and functional features rather than UI. And this is a demonstration, therefore not all features are available (Meta-specific authorizations). Indeed, all the Meta part is absent and it is only a demonstration of the UI and auth feature.",
+      // link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
       smallAnimation: "<i class='pi pi-facebook'></i>",
       code: "https://github.com/floalzaix/publisher-v2"
+    },
+    {
+      title: "EASY FOOT",
+      goal:
+        "This project was made during an event: the Promptathlon organised by ESEO. " +
+        "The goal was, in one day, to create a proof of concept of a solution " +
+        "to a company problem using AI and vibe coding. Our group worked with DFCO, " +
+        "the Dijon football club, which suggested a project to manage their players " +
+        "and see where it could lead.",
+      techs: [
+        "FastAPI",
+        "Angular",
+        "Hexagonal architecture",
+        "Feature pattern",
+        "Nginx",
+        "Docker Compose for deployment"
+      ],
+      note:
+        "Demo: part of the data was generated, the other part came from online scraping. " +
+        "The code is mostly AI-generated (1-day constraint).",
+      link: "https://easyfoot.floalz.fr",
+      video: "videos/easyfoot.mp4",
+      smallAnimation: "<i class='pi pi-microchip-ai'></i>",
+      code: "https://github.com/ISkyCraftI/Promptathlon_DFCO_Players_Data",
     },
   ]) as Project[],
 
@@ -207,7 +254,7 @@ export const environment = {
         "Reproduction du jeu d'un concours de programmation " +
         "de l'année précédente. " +
         "L'objectif était de fournir à mon équipe " +
-        "un support d'entraînement. \" Les 24H\" est un " +
+        "un support d'entraînement. \"Les 24H\" est un " +
         "défi qui dure 24 heures :) et qui " +
         "se déroule en deux étapes : d'abord une bataille d'IA sur " +
         "un jeu, ensuite un test de web design. " +
@@ -229,9 +276,9 @@ export const environment = {
       title: "GESTIONNAIRE DE COMPTE",
       goal:
         "Ce projet a été réalisé pour faciliter " +
-        "le suivi de mes transactions et de celles de ma petite amie. " +
+        "le suivi de mes transactions. " +
         "Comme Excel, il liste " +
-        "les transactions, ajoute des catégories, fournit " +
+        "les transactions, mais ajoute aussi des catégories, fournit " +
         "des détails par catégorie et des " +
         "récapitulatifs mensuels.",
       techs: [
@@ -251,11 +298,36 @@ export const environment = {
       code: "https://github.com/floalzaix/accounts",
     },
     {
+      title: "GESTIONNAIRE DE COMPTE V2",
+      goal:
+        "Ce projet est la suite du précédent. C'est " +
+        "une version améliorée qui utilise Angular et FastAPI. Il " +
+        "vise à faciliter l'intégration de l'IA dans l'application.",
+      techs: [
+        "FastAPI",
+        "Angular",
+        "Architecture hexagonale",
+        "Feature pattern",
+        "Postman pour les tests",
+        "Nginx",
+        "Docker Compose pour le déploiement"
+      ],
+      note:
+        "Démo disponible. Utilisez (id, pwd) = (test@test.com, " +
+        "test). L'interface est en français et le bouton " +
+        "mot de passe oublié est toujours purement décoratif.",
+      link: "https://accountsv2.floalz.fr",
+      video: "videos/accountsv2.mp4",
+      smallAnimation: "<i class='pi pi-euro'></i>",
+      code: "https://github.com/floalzaix/accountsv2",
+    },
+    {
       title: "WATERMARKING TOOL",
       goal:
-        "Pensé pour ma mère afin de mettre des watermarks sur " +
-        "des photos pour le plaisir. Cela m'a donné l'occasion d'essayer Angular " +
-        "et un type de design plus moderne et plus rapide ! ",
+        "Conçu comme un cadeau pour quelqu'un qui aime la photographie, " +
+        "afin d'apposer un filigrane sur des photos pour le plaisir. " +
+        "Cela m'a donné l'occasion d'essayer Angular " +
+        "et un design plus moderne et plus rapide !",
       techs: [
         "Backend FastAPI (Python)",
         "Frontend Angular",
@@ -279,7 +351,7 @@ export const environment = {
         "pour une intégration IA plus simple. J'ai entraîné un " +
         "modèle de Q-Learning pour y jouer. Après une semaine, " +
         "le score moyen de l'IA était de 50. Le Q-Learning n'était " +
-        "pas suffisant pour aller plus loin, peut-être qu'avec plus de " +
+        "pas suffisant pour aller plus loin ; peut-être qu'avec plus de " +
         "temps d'entraînement il aurait encore pu progresser.",
       techs: [
         "Principalement Python",
@@ -295,7 +367,7 @@ export const environment = {
     {
       title: "TETRIS",
       goal:
-        "Projet scolaire : Tetris guidé. Entrainement d'une " +
+        "Projet scolaire : Tetris guidé. Entraînement d'une " +
         "IA (comme pour Flappy Bird). J'ai d'abord essayé le Q-Learning, " +
         "mais les résultats n'étaient pas fameux. Puis " +
         "des Q-Networks, Dueling Q-Network, Double " +
@@ -314,15 +386,14 @@ export const environment = {
         "Ngrok, WebSocket pour le jeu en local"
       ],
       note:
-        "Pour la démonstration cette fois, " +
-        "c'est moi qui ai joué puisque l'IA ne se débrouillait pas très bien.",
+        "Démo",
       video: "videos/tetris.mp4",
       smallAnimation: "<i class='pi pi-spin pi-th-large'></i>"
     },
     {
       title: "SPEECH-TO-TEXT (STT)",
       goal:
-        "Première semaine de mon stage chez Cechas." +
+        "Première semaine de mon stage chez Cechas. " +
         "Ma mission : utiliser le modèle STT de Kyutai et " +
         "construire une API de transcription. Au bout d'une semaine, le backend " +
         "était prêt, le frontend pas totalement terminé. Le projet " +
@@ -343,7 +414,7 @@ export const environment = {
       code: "https://github.com/floalzaix/tetris",
     },
     {
-      title: "HEBERGEMENT LLM ",
+      title: "HÉBERGEMENT LLM",
       goal:
         "Deuxième projet de stage chez Cechas. " +
         "Permet à ses utilisateurs d'héberger n'importe quel LLM (Large Language " +
@@ -398,11 +469,35 @@ export const environment = {
         "Utilise le pattern Repository"
       ],
       note:
-        "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI. Et ceci est une démonstration, par conséquent les fonctionnalités ne sont pas toutes disponibles (authorizatons Meta propres à l'entreprise). En effet, toutes les parties Meta sont absentes et ceci est uniquement une démonstration de l'UI et des fonctionnalités d'authentification.",
-      link: "https://publisher.floalz.fr",
+        "L'accent était mis sur des fonctionnalités rapides et opérationnelles plutôt que sur l'UI. Et ceci est une démonstration, par conséquent les fonctionnalités ne sont pas toutes disponibles (autorisations Meta spécifiques). En effet, toute la partie Meta est absente et ceci est uniquement une démonstration de l'UI et des fonctionnalités d'authentification.",
+      // link: "https://publisher.floalz.fr",
       image: "images/publisher.png",
       smallAnimation: "<i class='pi pi-facebook'></i>",
       code: "https://github.com/floalzaix/publisher-v2",
+    },
+    {
+      title: "EASY FOOT",
+      goal:
+        "Ce projet a été réalisé lors d'un événement : le Promptathlon organisé par l'ESEO. " +
+        "L'objectif était, en une journée, de créer une preuve de concept d'une solution " +
+        "à un problème d'entreprise en utilisant l'IA et le vibe coding. Notre groupe a " +
+        "travaillé avec le DFCO, le club de football de Dijon, qui a proposé un projet " +
+        "de gestion de leurs joueurs pour voir où cela pouvait mener.",
+      techs: [
+        "FastAPI",
+        "Angular",
+        "Architecture hexagonale",
+        "Feature pattern",
+        "Nginx",
+        "Docker Compose pour le déploiement"
+      ],
+      note:
+        "Démo : une partie des données a été générée, l'autre provient du scraping en ligne. " +
+        "Le code est principalement généré par IA (contrainte d'une journée).",
+      link: "https://easyfoot.floalz.fr",
+      video: "videos/easyfoot.mp4",
+      smallAnimation: "<i class='pi pi-microchip-ai'></i>",
+      code: "https://github.com/ISkyCraftI/Promptathlon_DFCO_Players_Data",
     },
   ]) as Project[],
 };
